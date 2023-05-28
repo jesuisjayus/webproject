@@ -11,6 +11,15 @@ const PostSchema = new mongoose.Schema(
             required: true,
             max: 280
         },
+        description: {
+            type: String,
+            required: true,
+            max: 1000
+        },
+        category: {
+            type: String,
+            required: true
+        },
         likes: {
             type: Array,
             defaultValue: []
