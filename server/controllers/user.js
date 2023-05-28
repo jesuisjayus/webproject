@@ -1,5 +1,6 @@
 import User from '../models/User.js';
 import { handleError } from '../error.js';
+import Post from '../models/Post.js';
 
 export const getUser = async (req, res, next) => {
     try {
@@ -32,6 +33,7 @@ export const deleteUser = async (req, res, next) => {
     if(req.params.id === req.user.id) {
         try{
             await User.findByIdAndDelete(req.params.id);
+            await Post.deleteMany({ userId: req.params.id });
             res.status(200).json('User deleted successfully');
         }catch(err) {
             next(err);
