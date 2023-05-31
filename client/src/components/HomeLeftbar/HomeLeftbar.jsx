@@ -18,7 +18,7 @@ const Leftbar = () => {
                 <Link to="/profile">
                     <div className="flex items-center space-x-6 px-2 py-2 hover:bg-slate-200 rounded-full cursor-pointer">
                         <ProfileIcon fontSize="large" />
-                        <p>Profil</p>
+                        <p>Profile</p>
                     </div>
                 </Link>
                 <Link to="/new">

@@ -4,7 +4,11 @@ import Home from './pages/Home/Home';
 import SignIn from './pages/SignIn/SignIn';
 import New from './pages/New/New';
 import Profile from './pages/Profile/Profile';
+import Manage from './pages/Manage/Manage';
+import Error from './pages/Error/Error';
 import Navbar from './components/Navbar/Navbar';
+
+
 
 
 const Layout = () => {
@@ -21,6 +25,7 @@ const router = createBrowserRouter([
   {  
     path: "/",
     element: <Layout />,
+    errorElement: <Error />,
     children: [
       {
         path: "/",
@@ -37,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "/new",
         element: <New />,
+      },
+      {
+        path: "/manage/:id",
+        element: <Manage />,
       },
       {
         path: "/signout",
