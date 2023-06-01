@@ -2,14 +2,20 @@ import React from "react";
 import Leftbar from "../../components/NewPostLeftbar/NewPostLeftbar";
 import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
+import './stylenewpost.css'
 
 
 const NewPost = () => {
     const [characterCount, setCharacterCount] = useState(0);
-
-    const handleTextareaChange = (event) => {
+    const [characterCount2, setCharacterCount2] = useState(0);
+    const handleTextareaChange_short = (event) => {
         const text = event.target.value;
         setCharacterCount(text.length);
+        
+    };
+    const handleTextareaChange_description = (event) => {
+        const text = event.target.value;
+        setCharacterCount2(text.length);
     };
     return (
             <div className="grid grid-cols-1 md:grid-cols-4">
@@ -28,25 +34,25 @@ const NewPost = () => {
                     <br />
                     <br />
                     <h1>Short Description</h1>
-                    <textarea maxlength={100} title="max 100 characters" className="bg-blue-100 rounded resize-none py-2 px-2" style={{ width: '80%', height: '50px' }} onChange={handleTextareaChange}></textarea>
+                    <textarea maxlength={100} title="max 100 characters" className="bg-blue-100 rounded resize-none py-2 px-2" style={{ width: '80%', height: '50px' }} onChange={handleTextareaChange_short}></textarea>
                     <p>number of characters : {characterCount}/100</p>
                     <br />
                     <br />
                     <h1>Description</h1>
-                    <textarea maxlength={700} title="max 700 characters" className="bg-blue-100 rounded resize-none py-2 px-2" style={{ width: '80%', height: '200px' }} onChange={handleTextareaChange}></textarea>
-                    <p>number of characters : {characterCount}/700</p>
+                    <textarea maxlength={700} title="max 700 characters" className="bg-blue-100 rounded resize-none py-2 px-2" style={{ width: '80%', height: '200px' }} onChange={handleTextareaChange_description}></textarea>
+                    <p>number of characters : {characterCount2}/700</p>
                     <br />
-                </div>
-                <div className="flex">
-                <div>
+                    <br></br>
+                    <br></br>
                     <Link to="/profile/:id">
-                        
-                        <button className="bg-blue-500 px-4 py-2 text-white rounded-full float-right">
-                            Publish
+                    <div class="container">
+                        <button class="bg-blue-500 resize-none px-4 py-2 text-white rounded-full" style={{display: "flex", justifyContent:"center", alignItems:"flex-end"}}>
+                          Publish
                         </button>
+                    </div>
                     </Link>
                 </div>
-            </div>
+
             </div>
         );
 };

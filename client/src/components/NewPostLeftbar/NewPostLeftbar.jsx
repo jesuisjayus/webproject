@@ -2,8 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import HomeIcon from "@mui/icons-material/Home";
-import ManageIcon from '@mui/icons-material/ManageAccounts';
-import AddIcon from "@mui/icons-material/AddCircle";
+
 
 const Leftbar = () => {
     return ( 
