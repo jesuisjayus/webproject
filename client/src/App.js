@@ -52,7 +52,7 @@ const router = createBrowserRouter([
       element: <NewPost />,
      },
   ],
-  },
+},
 ]);
 
 function App() {

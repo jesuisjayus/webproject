@@ -1,5 +1,8 @@
 import React from "react";
 import { useEffect, useState } from 'react';
+import DoneIcon from "@mui/icons-material/Done";
+import CloseIcon from "@mui/icons-material/Close";
+import { Link } from "react-router-dom";
 import Leftbar from "../../components/ManageLeftbar/ManageLeftbar"; 
 
 const Manage = () => {
@@ -30,11 +33,11 @@ const Manage = () => {
         backgroundColor: 'lightgray',
       };
     
-      const imageStyle = {
+    const imageStyle = {
         width: '100%',
         height: '100%',
         objectFit: 'cover',
-      };
+    };
 
 
     return (
@@ -55,11 +58,11 @@ const Manage = () => {
                     </div>
                     <br />
                     <br />
-                    <h1>FirstName</h1>
+                    <h1>First Name</h1>
                     <input type="text" className="bg-blue-100 rounded py-2 px-2" style={{ width: '80%', height: '40px' }}/>
                     <br />
                     <br />
-                    <h1>LastName</h1>
+                    <h1>Last Name</h1>
                     <input type="text" className="bg-blue-100 rounded py-2 px-2" style={{ width: '80%', height: '40px' }}/>
                     <br />
                     <br />
@@ -72,6 +75,25 @@ const Manage = () => {
                     <p>number of characters : {characterCount}/500</p>
                     <br />
                 </div>
+                <div className="grid grid-col-1 md:grid-cols-2 justify-center">
+                    <div col-span-1 >
+                        <Link to="/profile/:id">
+                            <div className="flex items-center space-x-6 bg-purple-600 px-4 py-2 text-white hover:bg-slate-400 rounded-full cursor-pointer" style={{ width: '60%', height: '40px' }}>
+                                <DoneIcon fontSize="large" />
+                                <p>Validate</p>
+                            </div>
+                        </Link>
+                    </div>
+                    <div col-span-2 >
+                        <Link to="/profile/:id">
+                            <div className="flex items-center space-x-6 bg-red-500 px-4 py-2 text-white hover:bg-slate-400 rounded-full cursor-pointer" style={{ width: '60%', height: '40px' }}>
+                                <CloseIcon fontSize="large" />
+                                <p>Cancel</p>
+                            </div>
+                        </Link>
+                    </div>
+                </div>
+                <br />
             </div>
         </div>
         );
