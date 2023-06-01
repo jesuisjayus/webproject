@@ -15,15 +15,6 @@ const Leftbar = () => {
                     </div>
                 </Link>
             </div>
-            <div className="flex justify-between">
-                <div>
-                    <Link to="/">
-                        <button className="bg-red-500 px-4 py-2 text-white rounded-full">
-                            Lougout
-                        </button>
-                    </Link>
-                </div>
-            </div>
         </div>
     );
 };
