@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./signin.css"
 const SignIn = () => {
     return (
         <div>
@@ -8,8 +8,12 @@ const SignIn = () => {
                     Sign in to your account
                 </h2>
                 <input type="text" placeholder="Username" className="text-xl px-4 py-2 rounded-full"/>
-                <input type="password" placeholder="Password" className="text-xl px-4 py-2 rounded-full"/>
-                <button className="bg-blue-500 text-white text-xl px-4 py-2 rounded-full">SignIn</button>
+                <br></br>
+                    <div class='container'>
+                    <button class="bg-blue-500 resize-none px-4 py-2 text-white rounded-full" style={{display: "flex", justifyContent:"center", alignItems:"flex-end"}}>
+                        Sign in
+                    </button>
+                </div>
             </form>
             <form className="bg-gray-200 flex flex-col px-8 py-12 rounded-lg w-8/12 md:w-6/12 mx-auto my-10 gap-10">
                 <p className="mx-auto">Don't have any account?</p>
@@ -25,8 +29,13 @@ const SignIn = () => {
                 <input type="text" placeholder="Email" className="text-xl px-4 py-2 rounded-full"/>
                 </div>
                 <input type="password" placeholder="Password" className="text-xl px-4 py-2 rounded-full"/>
-                <button className="bg-blue-500 text-white text-xl px-4 py-2 rounded-full">SignUp</button>
-
+                <br></br>
+                <div class='container'>
+                <button class="bg-blue-500 resize-none px-4 py-2 text-white rounded-full" style={{display: "flex", justifyContent:"center", alignItems:"flex-end"}}>
+                    Sign out
+                </button>
+                </div>
+                
             </form>
         </div>
         );
