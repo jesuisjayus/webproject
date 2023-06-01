@@ -7,6 +7,7 @@ import Profile from './pages/Profile/Profile';
 import Manage from './pages/Manage/Manage';
 import Error from './pages/Error/Error';
 import Navbar from './components/Navbar/Navbar';
+import Announcement from './pages/Announcement/Announcement';
 
 
 
@@ -50,7 +51,11 @@ const router = createBrowserRouter([
       {
         path: "/signout",
         element: <SignIn />,
-    },
+     },
+     {
+      path: "/announcement",
+      element: <Announcement />,
+     },
   ],
   },
 ]);

@@ -32,7 +32,7 @@ const Leftbar = () => {
                 <div>
                     <Link to="/">
                         <button className="bg-red-500 px-4 py-2 text-white rounded-full">
-                            Lougout
+                            Log Out
                         </button>
                     </Link>
                 </div>
