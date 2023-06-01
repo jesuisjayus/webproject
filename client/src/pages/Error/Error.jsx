@@ -8,7 +8,7 @@ const Error = () => {
                 <p className="pb-2">
                     Please go back to the home page and try again.
                 </p>
-                <Link to="/home" className="bg-blue-500 px-3 py-1 rounded-full text-white font-bold hover:bg-blue-700">
+                <Link to="/home" className="bg-button px-3 py-1 rounded-full text-white font-bold hover:bg-button-hover">
                     Home
                 </Link>
             </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import DoneIcon from "@mui/icons-material/Done";
 import CloseIcon from "@mui/icons-material/Close";
 import { Link } from "react-router-dom";
@@ -42,16 +42,16 @@ const Manage = () => {
 
     return (
         <div className="grid grid-cols-1 md:grid-cols-4">
-            <div className="col-span-1">
+            <div className="px-6">
                 <Leftbar />
             </div>
             <div className="col-span-3 border-t-slate-800 px-6">
-                <h1>Manage Profile</h1> 
+                <h2 className="text-3xl text-text font-bold">Manage Profile</h2> 
                 <br />
                 <div>
                     <div>
                         <div style={profilePictureStyle}>
-                            <img src={selectedImage} style={imageStyle} />
+                            <img src={selectedImage} alt="" style={imageStyle} />
                         </div>
                         <br />
                         <input type="file" accept=".jpeg, .jpg, .png" onChange={handleImageChange} />

@@ -1,41 +1,31 @@
 import React from "react";
-import "./signin.css"
+
 const SignIn = () => {
     return (
         <div>
-            <form className="bg-gray-200 flex flex-col px-8 py-12 rounded-lg w-8/12 md:w-6/12 mx-auto gap-10">
-                <h2 className="text-3xl font-bold text-center">
+            <form className="bg-form flex flex-col px-8 py-12 rounded-lg w-8/12 md:w-6/12 mx-auto gap-10">
+                <h2 className="text-3xl text-text font-bold text-center">
                     Sign in to your account
                 </h2>
                 <input type="text" placeholder="Username" className="text-xl px-4 py-2 rounded-full"/>
-                <br></br>
-                    <div class='container'>
-                    <button class="bg-blue-500 resize-none px-4 py-2 text-white rounded-full" style={{display: "flex", justifyContent:"center", alignItems:"flex-end"}}>
-                        Sign in
-                    </button>
-                </div>
+                <input type="password" placeholder="Password" className="text-xl px-4 py-2 rounded-full"/>
+                <button className="bg-button text-white text-xl px-4 py-2 rounded-full hover:bg-button-hover">Sign In</button>
             </form>
-            <form className="bg-gray-200 flex flex-col px-8 py-12 rounded-lg w-8/12 md:w-6/12 mx-auto my-10 gap-10">
-                <p className="mx-auto">Don't have any account?</p>
-                <h2 className="text-3xl font-bold text-center">
+            <form className="bg-form flex flex-col px-8 py-12 rounded-lg w-8/12 md:w-6/12 mx-auto my-10 gap-10">
+                <p className="mx-auto text-text">Don't have any account?</p>
+                <h2 className="text-3xl text-text font-bold text-center">
                     Create an account
                 </h2>
                 <div className="grid grid-cols-2 gap-4">
-                <input type="text" placeholder="First Name" className="text-xl px-4 py-2 rounded-full"/>
-                <input type="text" placeholder="Last Name" className="text-xl px-4 py-2 rounded-full"/>
+                <input type="text" placeholder="Firstname" className="text-xl px-4 py-2 rounded-full"/>
+                <input type="text" placeholder="Lastname" className="text-xl px-4 py-2 rounded-full"/>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                 <input type="text" placeholder="Username" className="text-xl px-4 py-2 rounded-full"/>
                 <input type="text" placeholder="Email" className="text-xl px-4 py-2 rounded-full"/>
                 </div>
                 <input type="password" placeholder="Password" className="text-xl px-4 py-2 rounded-full"/>
-                <br></br>
-                <div class='container'>
-                <button class="bg-blue-500 resize-none px-4 py-2 text-white rounded-full" style={{display: "flex", justifyContent:"center", alignItems:"flex-end"}}>
-                    Sign out
-                </button>
-                </div>
-                
+                <button className="bg-button text-white text-xl px-4 py-2 rounded-full hover:bg-button-hover">Sign Up</button>
             </form>
         </div>
         );

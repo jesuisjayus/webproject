@@ -30,9 +30,8 @@ function ChooseCategory()
     const customStyles = {
         control: (provided) => ({
           ...provided,
-          width: '80%', // Set the desired width of the select control
-          border: '1px solid #ccc', 
-          borderRadius: '4px', 
+          width: '100%', // Set the desired width of the select control 
+          borderRadius: '40px', 
         }),
       };
     
