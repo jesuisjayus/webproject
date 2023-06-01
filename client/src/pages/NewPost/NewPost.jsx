@@ -1,11 +1,11 @@
 import React from "react";
 
-const Announcement = () => {
+const NewPost = () => {
     return (
             <div>
-                Announcement
+                New Post
             </div>
         );
 };
 
-export default Announcement;
+export default NewPost;

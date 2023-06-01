@@ -7,7 +7,8 @@ import Profile from './pages/Profile/Profile';
 import Manage from './pages/Manage/Manage';
 import Error from './pages/Error/Error';
 import Navbar from './components/Navbar/Navbar';
-import Announcement from './pages/Announcement/Announcement';
+import Announcement from './pages/NewPost/NewPost';
+import NewPost from './pages/NewPost/NewPost';
 
 
 
@@ -53,8 +54,8 @@ const router = createBrowserRouter([
         element: <SignIn />,
      },
      {
-      path: "/announcement",
-      element: <Announcement />,
+      path: "/NewPost",
+      element: <NewPost />,
      },
   ],
   },
