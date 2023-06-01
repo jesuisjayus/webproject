@@ -47,13 +47,12 @@ const router = createBrowserRouter([
         path: "/signout",
         element: <SignIn />,
       },
-     },
      {
       path: "/NewPost",
       element: <NewPost />,
      },
   ],
-  },
+},
 ]);
 
 function App() {
