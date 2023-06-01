@@ -2,11 +2,11 @@ import {createBrowserRouter, RouterProvider, Outlet} from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home/Home';
 import SignIn from './pages/SignIn/SignIn';
-import New from './pages/New/New';
 import Profile from './pages/Profile/Profile';
 import Manage from './pages/Manage/Manage';
 import Error from './pages/Error/Error';
 import Navbar from './components/Navbar/Navbar';
+import NewPost from './pages/NewPost/NewPost';
 
 
 
@@ -40,10 +40,6 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/new",
-        element: <New />,
-      },
-      {
         path: "/manage/:id",
         element: <Manage />,
       },
@@ -51,6 +47,11 @@ const router = createBrowserRouter([
         path: "/signout",
         element: <SignIn />,
       },
+     },
+     {
+      path: "/NewPost",
+      element: <NewPost />,
+     },
   ],
   },
 ]);

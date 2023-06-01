@@ -21,10 +21,10 @@ const Leftbar = () => {
                         <p>Manage profile</p>
                     </div>
                 </Link>
-                <Link to="/new">
+                <Link to="/NewPost">
                     <div className="flex items-center space-x-6 px-2 py-2 hover:bg-slate-200 rounded-full cursor-pointer">
                         <AddIcon fontSize="large" />
-                        <p>New post</p>
+                        <p>New Post</p>
                     </div>
                 </Link>   
             </div>
@@ -32,7 +32,7 @@ const Leftbar = () => {
                 <div>
                     <Link to="/">
                         <button className="bg-red-500 px-4 py-2 text-white rounded-full">
-                            Lougout
+                            Log Out
                         </button>
                     </Link>
                 </div>
