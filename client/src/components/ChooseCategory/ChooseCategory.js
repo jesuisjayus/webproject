@@ -26,12 +26,21 @@ function ChooseCategory()
 
         }
     ];
-    return(
+    
+    const customStyles = {
+        control: (provided) => ({
+          ...provided,
+          width: '80%', // Set the desired width of the select control
+          border: '1px solid #ccc', 
+          borderRadius: '4px', 
+        }),
+      };
+    
+      return (
         <div>
-            <Select options={categorychoice}/>
-            
+          <Select options={categorychoice} styles={customStyles} />
         </div>
-    );
-}
-
+      );
+    }
+    
 export default ChooseCategory;

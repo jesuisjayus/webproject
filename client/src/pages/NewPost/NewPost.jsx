@@ -33,10 +33,10 @@ const NewPost = () => {
                     <input type="text" className="bg-blue-100 rounded py-2 px-2" style={{ width: '80%', height: '40px' }}/>
                     <br></br>
                     <br></br>
-                    
-                    <h2>Choose the category</h2>
+
+                    <h1>Choose the category</h1>
                     <ChooseCategory /> 
-                  
+                    
                     <br></br>
                     <br></br>
                     <h1>Short Description</h1>
