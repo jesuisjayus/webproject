@@ -3,11 +3,11 @@ import Leftbar from "../../components/NewPostLeftbar/NewPostLeftbar";
 import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import './stylenewpost.css'
-
+import ChooseCategory from "../../components/ChooseCategory/ChooseCategory";
 
 const NewPost = () => {
-    const [characterCount, setCharacterCount] = useState(0);
-    const [characterCount2, setCharacterCount2] = useState(0);
+    const [characterCount, setCharacterCount] = useState(0);  // for short description
+    const [characterCount2, setCharacterCount2] = useState(0); // for description
     const handleTextareaChange_short = (event) => {
         const text = event.target.value;
         setCharacterCount(text.length);
@@ -31,8 +31,14 @@ const NewPost = () => {
                     <br />
                     <h1>Title</h1>
                     <input type="text" className="bg-blue-100 rounded py-2 px-2" style={{ width: '80%', height: '40px' }}/>
-                    <br />
-                    <br />
+                    <br></br>
+                    <br></br>
+                    
+                    <h2>Choose the category</h2>
+                    <ChooseCategory /> 
+                  
+                    <br></br>
+                    <br></br>
                     <h1>Short Description</h1>
                     <textarea maxlength={100} title="max 100 characters" className="bg-blue-100 rounded resize-none py-2 px-2" style={{ width: '80%', height: '50px' }} onChange={handleTextareaChange_short}></textarea>
                     <p>number of characters : {characterCount}/100</p>
@@ -51,6 +57,7 @@ const NewPost = () => {
                         </button>
                     </div>
                     </Link>
+                    <br></br>
                 </div>
 
             </div>
