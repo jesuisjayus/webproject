@@ -15,16 +15,16 @@ const Leftbar = () => {
                         <p>Home</p>
                     </div>
                 </Link>
-                <Link to="/profile">
+                <Link to="/profile/:id">
                     <div className="flex items-center space-x-6 px-2 py-2 hover:bg-slate-200 rounded-full cursor-pointer">
                         <ProfileIcon fontSize="large" />
                         <p>Profile</p>
                     </div>
                 </Link>
-                <Link to="/NewPost">
+                <Link to="/Newpost">
                     <div className="flex items-center space-x-6 px-2 py-2 hover:bg-slate-200 rounded-full cursor-pointer">
                         <AddIcon fontSize="large" />
-                        <p>New post</p>
+                        <p>New Post</p>
                     </div>
                 </Link>   
             </div>
