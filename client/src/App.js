@@ -7,6 +7,7 @@ import Manage from './pages/Manage/Manage';
 import Error from './pages/Error/Error';
 import Navbar from './components/Navbar/Navbar';
 import NewPost from './pages/NewPost/NewPost';
+import NewPostDetail from './pages/NewPostDetail/NewPostDetail';
 
 
 
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
      {
       path: "/NewPost",
       element: <NewPost />,
+     },
+     {
+      path: "/NewPostDetail",
+      element: <NewPostDetail />,
      },
   ],
 },

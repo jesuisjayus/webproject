@@ -12,7 +12,7 @@ function ChooseCategory()
         },
         {
              value: 2,
-             label: "Kitchen"
+             label: "Cooking"
 
        },
        {
@@ -26,7 +26,7 @@ function ChooseCategory()
 
         }
     ];
-    
+
     const customStyles = {
         control: (provided) => ({
           ...provided,

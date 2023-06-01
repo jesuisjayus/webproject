@@ -23,29 +23,27 @@ const NewPost = () => {
                     <Leftbar />
                 </div>
                 <div className="col-span-3 border-t-slate-800 px-6">
-                <h1>New Post</h1> 
+                <h1 className="text-3xl font-bold mb-4">New Post</h1>
                 <br />
                 <div>
                     </div>
-                    <br />
-                    <br />
+                    <br></br>
+                    <br></br>
                     <h1>Title</h1>
-                    <input type="text" className="bg-blue-100 rounded py-2 px-2" style={{ width: '80%', height: '40px' }}/>
+                        <input type="text" className="bg-blue-100 rounded py-2 px-2" style={{ width: '80%', height: '40px' }}/>
                     <br></br>
                     <br></br>
-
                     <h1>Choose the category</h1>
-                    <ChooseCategory /> 
-                    
+                        <ChooseCategory /> 
                     <br></br>
                     <br></br>
                     <h1>Short Description</h1>
-                    <textarea maxlength={100} title="max 100 characters" className="bg-blue-100 rounded resize-none py-2 px-2" style={{ width: '80%', height: '50px' }} onChange={handleTextareaChange_short}></textarea>
-                    <p>number of characters : {characterCount}/100</p>
+                        <textarea maxlength={100} title="max 100 characters" className="bg-blue-100 rounded resize-none py-2 px-2" style={{ width: '80%', height: '70px' }} onChange={handleTextareaChange_short}></textarea>
+                            <p>number of characters : {characterCount}/100</p>
                     <br />
                     <br />
                     <h1>Description</h1>
-                    <textarea maxlength={700} title="max 700 characters" className="bg-blue-100 rounded resize-none py-2 px-2" style={{ width: '80%', height: '200px' }} onChange={handleTextareaChange_description}></textarea>
+                        <textarea maxlength={700} title="max 700 characters" className="bg-blue-100 rounded resize-none py-2 px-2" style={{ width: '80%', height: '200px' }} onChange={handleTextareaChange_description}></textarea>
                     <p>number of characters : {characterCount2}/700</p>
                     <br />
                     <br></br>
