@@ -6,17 +6,7 @@ import { Link } from "react-router-dom";
 
 
 const NewPostDetail = () => {
-    const [characterCount, setCharacterCount] = useState(0);  // for short description
-    const [characterCount2, setCharacterCount2] = useState(0); // for description
-    const handleTextareaChange_short = (event) => {
-        const text = event.target.value;
-        setCharacterCount(text.length);
-        
-    };
-    const handleTextareaChange_description = (event) => {
-        const text = event.target.value;
-        setCharacterCount2(text.length);
-    };
+    
     return (
             <div className="grid grid-cols-1 md:grid-cols-4">
                 <div className="px-6">

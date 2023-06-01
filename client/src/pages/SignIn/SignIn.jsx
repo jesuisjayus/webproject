@@ -17,8 +17,8 @@ const SignIn = () => {
                     Create an account
                 </h2>
                 <div className="grid grid-cols-2 gap-4">
-                <input type="text" placeholder="Firstname" className="text-xl px-4 py-2 rounded-full"/>
-                <input type="text" placeholder="Lastname" className="text-xl px-4 py-2 rounded-full"/>
+                <input type="text" placeholder="First Name" className="text-xl px-4 py-2 rounded-full"/>
+                <input type="text" placeholder="Last Name" className="text-xl px-4 py-2 rounded-full"/>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                 <input type="text" placeholder="Username" className="text-xl px-4 py-2 rounded-full"/>

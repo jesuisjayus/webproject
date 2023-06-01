@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import './stylenewpost.css'
 import ChooseCategory from "../../components/ChooseCategory/ChooseCategory";
-
+import './background.css'
 const NewPost = () => {
     const [characterCount, setCharacterCount] = useState(0);  // for short description
     const [characterCount2, setCharacterCount2] = useState(0); // for description
@@ -18,6 +18,8 @@ const NewPost = () => {
         setCharacterCount2(text.length);
     };
     return (
+        <div className="page-container">
+        <div className="moving-background">
             <div className="grid grid-cols-1 md:grid-cols-4">
                 <div className="px-6">
                     <Leftbar />
@@ -58,6 +60,8 @@ const NewPost = () => {
                     <br></br>
                 </div>
 
+            </div>
+            </div>
             </div>
         );
 };

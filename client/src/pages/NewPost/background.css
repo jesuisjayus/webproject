@@ -1,0 +1,31 @@
+
+
+@keyframes movingBackground {
+    0% {
+      background-color: #C8D9EE; 
+    }
+    50% {
+      background-color: #7272AB; 
+    }
+    100% {
+      background-color: #C8D9EE; 
+    }
+  }
+  
+  .moving-background {
+    animation: movingBackground 10s infinite; /* Adjust duration as needed */
+  }
+
+  /*.page-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 100vw;
+    height: 100vh;
+  }
+  */
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+  }
