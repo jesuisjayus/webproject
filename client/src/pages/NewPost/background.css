@@ -29,3 +29,22 @@
     padding: 0;
     height: 100vh;
   }
+  .new-post {
+    display: flex;
+    align-items: center;
+    border: 2px solid #000000; /* Border style and color */
+    padding: 10px; /* Adjust padding as needed */
+    width: 22%;
+  }
+  
+  .logo {
+
+    margin-right: 10px; 
+  }
+  
+  .title {
+    font-size: 24px; 
+    font-weight: bold;
+    margin: 0;
+
+  }

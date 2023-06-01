@@ -25,7 +25,12 @@ const NewPost = () => {
                     <Leftbar />
                 </div>
                 <div className="col-span-3 border-t-slate-800 px-6">
-                <h1 className="text-3xl font-bold mb-4">New Post</h1>
+                <div className="new-post">
+                <div className="logo">
+                     {/* Insert your logo here */}
+                </div>
+                <h1 className="title">New Post</h1>
+                </div>
                 <br />
                 <div>
                     </div>
