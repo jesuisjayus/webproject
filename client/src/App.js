@@ -50,7 +50,7 @@ const router = createBrowserRouter([
       {
         path: "/signout",
         element: <SignIn />,
-    },
+      },
   ],
   },
 ]);

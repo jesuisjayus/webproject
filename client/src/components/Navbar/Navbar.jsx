@@ -8,14 +8,14 @@ const Navbar = () =>{
             </div>
             <div className="col-span-2 md:border-x-2 md:border-slate-200 md:px-6 my-6 md:my-0">
                 <div className= "flex justify-between item-center">
-                    <h2 className="font-bold text-2xl">Home</h2>
+                    <h2 className="font-bold text-2xl">SkillConnect</h2>
                 </div>
             </div>
 
 
             <div className="px-0 md:px-6 mx-auto" style={{ position: 'relative' }}>
                 <SearchIcon className="absolute m-2" />
-                <input type="text" className="bg-blue-100 rounded-full py-2 px-8" style={{ left: '2rem' }} />
+                <input type="text" className="bg-blue-100 rounded-full py-2 px-8" style={{ left: '2rem' }} placeholder="Search..." />
             </div>
 
         </div>
