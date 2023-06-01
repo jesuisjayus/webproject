@@ -2,12 +2,10 @@ import {createBrowserRouter, RouterProvider, Outlet} from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home/Home';
 import SignIn from './pages/SignIn/SignIn';
-import New from './pages/New/New';
 import Profile from './pages/Profile/Profile';
 import Manage from './pages/Manage/Manage';
 import Error from './pages/Error/Error';
 import Navbar from './components/Navbar/Navbar';
-import Announcement from './pages/NewPost/NewPost';
 import NewPost from './pages/NewPost/NewPost';
 
 
@@ -40,10 +38,6 @@ const router = createBrowserRouter([
       {
         path: "/home",
         element: <Home />,
-      },
-      {
-        path: "/new",
-        element: <New />,
       },
       {
         path: "/manage/:id",
