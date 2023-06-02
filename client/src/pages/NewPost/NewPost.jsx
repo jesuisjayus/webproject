@@ -44,7 +44,7 @@ const NewPost = () => {
                     </form>
                     </div>
             </div>
-        </div>
+        </>
             
         );
 };
