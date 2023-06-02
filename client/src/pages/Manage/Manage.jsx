@@ -69,6 +69,10 @@ const Manage = () => {
                     <input type="text" pattern="\d{2}/\d{2}/\d{4}" title="Format DD/MM/YYYY" className="bg-blue-100 rounded py-2 px-2" style={{ width: '80%', height: '40px' }}required/>
                     <br />
                     <br />
+                    <h1>City</h1>
+                    <input type="text" className="bg-blue-100 rounded py-2 px-2" style={{ width: '80%', height: '40px' }}/>
+                    <br />
+                    <br />
                     <h1>Description</h1>
                     <textarea maxlength={500} title="max 500 characters" className="bg-blue-100 rounded resize-none py-2 px-2" style={{ width: '80%', height: '200px' }} onChange={handleTextareaChange}></textarea>
                     <p>number of characters : {characterCount}/500</p>
