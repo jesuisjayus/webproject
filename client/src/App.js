@@ -5,7 +5,6 @@ import SignIn from './pages/SignIn/SignIn';
 import Profile from './pages/Profile/Profile';
 import Manage from './pages/Manage/Manage';
 import Error from './pages/Error/Error';
-import Navbar from './components/Navbar/Navbar';
 import NewPost from './pages/NewPost/NewPost';
 import NewPostDetail from './pages/NewPostDetail/NewPostDetail';
 
@@ -15,7 +14,6 @@ import NewPostDetail from './pages/NewPostDetail/NewPostDetail';
 const Layout = () => {
   return(
     <div className="md:w-8/12 mx-auto">
-      <Navbar />
       <Outlet></Outlet>
     </div>
   );

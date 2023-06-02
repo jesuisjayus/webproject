@@ -2,12 +2,16 @@ import React from "react";
 import Leftbar from "../../components/NewPostLeftbar/NewPostLeftbar";
 import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
-
+import Navbar from "../../components/Navbar/Navbar";
 
 
 const NewPostDetail = () => {
     
     return (
+        <>
+            <div>
+                <Navbar />
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-4">
                 <div className="px-6">
                     <Leftbar />
@@ -20,6 +24,7 @@ const NewPostDetail = () => {
                 </div>
 
             </div>
+        </>
         );
 };
 
