@@ -8,7 +8,7 @@ const initialState = {
 
 export const userSlice = createSlice({
   name: "user",
-  initialState: initialState, // Fix typo here
+  initialState: initialState, 
   reducers: {
     loginStart: (state) => {
       state.isLoading = true;
