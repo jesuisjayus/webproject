@@ -18,7 +18,7 @@ const NewPost = () => {
         setCharacterCount2(text.length);
     };
     return (
-        <>
+        <div>
             <div>
                 <Navbar />
             </div>
@@ -44,7 +44,7 @@ const NewPost = () => {
                     </form>
                     </div>
             </div>
-        </>
+        </div>
             
         );
 };
