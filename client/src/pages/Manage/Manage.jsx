@@ -42,69 +42,49 @@ const Manage = () => {
 
 
     return (
-        <>
         <div>
-            <Navbar />
-        </div>
-        
-            <form className="bg-form flex flex-col px-8 py-12 rounded-lg w-8/12 md:w-6/12 mx-auto gap-10">
-            <div className="col-span-3 border-t-slate-800 px-6">
-                <h2 className="text-3xl text-text font-bold">Manage Profile</h2> 
-                <br />
-                <div>
-                    <div>
-                        <div style={profilePictureStyle}>
-                            <img src={selectedImage} alt="" style={imageStyle} />
+            <div>
+                <Navbar />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-4">
+                <div className="px-6">
+                    <Leftbar />
+                </div>
+                <div className="col-span-3 border-t-slate-800">
+                <form className="bg-form flex flex-col px-8 py-12 rounded-lg w-8/12 mx-0 gap-10">
+                    <h2 className="text-3xl text-text font-bold text-center">
+                        Manage Profile
+                    </h2> 
+                    <div style={profilePictureStyle}>
+                        <img src={selectedImage} alt="" style={imageStyle} />
+                    </div>
+                    <input type="file" accept=".jpeg, .jpg, .png" onChange={handleImageChange} />
+                        <input type="text" placeholder="Username" className="bg-blue-100 rounded-full py-2 px-2"/>
+                        <input type="text" placeholder="Birth Date (DD/MM/YYYY)" pattern="\d{2}/\d{2}/\d{4}" title="Format DD/MM/YYYY" className="bg-blue-100 rounded-full py-2 px-2" required/>
+                        <textarea maxlength={500} title="max 500 characters" placeholder="Write a little description..." className="bg-blue-100 rounded-lg py-2 px-2" onChange={handleTextareaChange}></textarea>
+                        <p>number of characters : {characterCount}/500</p>
+                        <div className="grid grid-cols-2 gap-4">
+                            <Link to="/profile/:id">
+                                <div className="bg-button text-white text-xl px-4 py-2 rounded-full hover:bg-button-hover">
+                                    <DoneIcon fontSize="large" />
+                                    <span className="ml-8">Validate</span>
+                                </div>
+                            </Link>
+                            <Link to="/profile/:id">
+                                <div className="bg-red-500 text-white text-xl px-4 py-2 rounded-full hover:bg-red-300">
+                                    <CloseIcon fontSize="large" />
+                                    <span className="ml-8">Cancel</span>
+                                </div>
+                            </Link>
                         </div>
-                        <br />
-                        <input type="file" accept=".jpeg, .jpg, .png" onChange={handleImageChange} />
-                    </div>
-                    <br />
-                    <br />
-                    <h1>First Name</h1>
-                    <input type="text" className="bg-blue-100 rounded py-2 px-2" style={{ width: '80%', height: '40px' }}/>
-                    <br />
-                    <br />
-                    <h1>Last Name</h1>
-                    <input type="text" className="bg-blue-100 rounded py-2 px-2" style={{ width: '80%', height: '40px' }}/>
-                    <br />
-                    <br />
-                    <h1>Birthday</h1>
-                    <input type="text" pattern="\d{2}/\d{2}/\d{4}" title="Format DD/MM/YYYY" className="bg-blue-100 rounded py-2 px-2" style={{ width: '80%', height: '40px' }}required/>
-                    <br />
-                    <br />
-                    <h1>City</h1>
-                    <input type="text" className="bg-blue-100 rounded py-2 px-2" style={{ width: '80%', height: '40px' }}/>
-                    <br />
-                    <br />
-                    <h1>Description</h1>
-                    <textarea maxlength={500} title="max 500 characters" className="bg-blue-100 rounded resize-none py-2 px-2" style={{ width: '80%', height: '200px' }} onChange={handleTextareaChange}></textarea>
-                    <p>number of characters : {characterCount}/500</p>
-                    <br />
+                </form>     
                 </div>
-                <div className="grid grid-col-1 md:grid-cols-2 justify-center">
-                    <div col-span-1 >
-                        <Link to="/profile/:id">
-                            <div className="flex items-center space-x-6 bg-purple-600 px-4 py-2 text-white hover:bg-slate-400 rounded-full cursor-pointer" style={{ width: '60%', height: '40px' }}>
-                                <DoneIcon fontSize="large" />
-                                <p>Validate</p>
-                            </div>
-                        </Link>
-                    </div>
-                    <div col-span-2 >
-                        <Link to="/profile/:id">
-                            <div className="flex items-center space-x-6 bg-red-500 px-4 py-2 text-white hover:bg-slate-400 rounded-full cursor-pointer" style={{ width: '60%', height: '40px' }}>
-                                <CloseIcon fontSize="large" />
-                                <p>Cancel</p>
-                            </div>
-                        </Link>
-                    </div>
-                </div>
-                <br /> 
-            </div>      
-            </form>     
-        </>
+            </div>
+        </div>
         );
-};
+    };
+
 
 export default Manage; 
+
+                     

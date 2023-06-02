@@ -38,6 +38,10 @@ const UserSchema = new mongoose.Schema(
         description: {
             type: String
         },
+        birthDate: {
+            type: String,
+            defaultValue: ""
+        },
         iDo: {
             type: String,
             defaultValue: ""
