@@ -18,10 +18,13 @@ const NewPost = () => {
         setCharacterCount2(text.length);
     };
     return (
+<<<<<<< HEAD
         <>
             <div>
                 <Navbar />
             </div>
+=======
+>>>>>>> 94984598b23cc0076f9776343b2d7344756caecc
             <div className="grid grid-cols-1 md:grid-cols-4">
                 <div className="px-6">
                 <Leftbar />
@@ -44,7 +47,11 @@ const NewPost = () => {
                     </form>
                     </div>
             </div>
+<<<<<<< HEAD
         </>
+=======
+                
+>>>>>>> 94984598b23cc0076f9776343b2d7344756caecc
             
         );
 };
