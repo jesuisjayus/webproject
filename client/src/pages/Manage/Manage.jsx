@@ -4,6 +4,7 @@ import DoneIcon from "@mui/icons-material/Done";
 import CloseIcon from "@mui/icons-material/Close";
 import { Link } from "react-router-dom";
 import Leftbar from "../../components/ManageLeftbar/ManageLeftbar"; 
+import Navbar from "../../components/Navbar/Navbar";
 
 const Manage = () => {
     const [characterCount, setCharacterCount] = useState(0);
@@ -41,10 +42,12 @@ const Manage = () => {
 
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-4">
-            <div className="px-6">
-                <Leftbar />
-            </div>
+        <>
+        <div>
+            <Navbar />
+        </div>
+        
+            <form className="bg-form flex flex-col px-8 py-12 rounded-lg w-8/12 md:w-6/12 mx-auto gap-10">
             <div className="col-span-3 border-t-slate-800 px-6">
                 <h2 className="text-3xl text-text font-bold">Manage Profile</h2> 
                 <br />
@@ -97,9 +100,10 @@ const Manage = () => {
                         </Link>
                     </div>
                 </div>
-                <br />
-            </div>
-        </div>
+                <br /> 
+            </div>      
+            </form>     
+        </>
         );
 };
 
