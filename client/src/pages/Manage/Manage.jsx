@@ -41,10 +41,9 @@ const Manage = () => {
 
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-4">
-            <div className="px-6">
-                <Leftbar />
-            </div>
+            
+        
+            <form className="bg-form flex flex-col px-8 py-12 rounded-lg w-8/12 md:w-6/12 mx-auto gap-10">
             <div className="col-span-3 border-t-slate-800 px-6">
                 <h2 className="text-3xl text-text font-bold">Manage Profile</h2> 
                 <br />
@@ -70,6 +69,10 @@ const Manage = () => {
                     <input type="text" pattern="\d{2}/\d{2}/\d{4}" title="Format DD/MM/YYYY" className="bg-blue-100 rounded py-2 px-2" style={{ width: '80%', height: '40px' }}required/>
                     <br />
                     <br />
+                    <h1>City</h1>
+                    <input type="text" className="bg-blue-100 rounded py-2 px-2" style={{ width: '80%', height: '40px' }}/>
+                    <br />
+                    <br />
                     <h1>Description</h1>
                     <textarea maxlength={500} title="max 500 characters" className="bg-blue-100 rounded resize-none py-2 px-2" style={{ width: '80%', height: '200px' }} onChange={handleTextareaChange}></textarea>
                     <p>number of characters : {characterCount}/500</p>
@@ -93,9 +96,10 @@ const Manage = () => {
                         </Link>
                     </div>
                 </div>
-                <br />
-            </div>
-        </div>
+                <br /> 
+            </div>      
+            </form>     
+        
         );
 };
 
