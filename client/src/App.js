@@ -7,7 +7,7 @@ import Manage from './pages/Manage/Manage';
 import Error from './pages/Error/Error';
 import NewPost from './pages/NewPost/NewPost';
 import NewPostDetail from './pages/NewPostDetail/NewPostDetail';
-
+import AboutUs from './pages/AboutUs/AboutUs';
 
 
 
@@ -53,6 +53,10 @@ const router = createBrowserRouter([
      {
       path: "/NewPostDetail",
       element: <NewPostDetail />,
+     },
+     {
+      path: "/AboutUs",
+      element: <AboutUs />,
      },
   ],
 },

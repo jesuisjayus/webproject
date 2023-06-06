@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import ChooseCategory from "../../components/ChooseCategory/ChooseCategory";
 import Navbar from "../../components/Navbar/Navbar";
 
+import SocialMedia from "../../components/SocialMedia/SocialMedia";
 const NewPost = () => {
     const [characterCount, setCharacterCount] = useState(0);  // for short description
     const [characterCount2, setCharacterCount2] = useState(0); // for description
@@ -42,13 +43,19 @@ const NewPost = () => {
                     </button>
                     
                     </form>
+                    
                     </div>
+                    <a>
+                    <span style={{ height:"50px", width: "4rem" }}></span> 
+                    <SocialMedia/>
+                    <span style={{ height:"50px", width: "4rem" }}></span> 
+                    </a>
             </div>
-        </>
-            
+
+            </div>
+         
         );
 };
-
         
 
 export default NewPost;
