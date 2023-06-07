@@ -5,6 +5,7 @@ import cookieParser from "cookie-parser";
 import userRoutes from "./routes/users.js";
 import authRoutes from "./routes/auths.js";
 import postRoutes from "./routes/posts.js";
+import cors from "cors";
 
 
 const app = express();
@@ -20,11 +21,15 @@ const connect = () => {
         });
 };
 
+app.use(cors({
+    origin: "http://localhost:3000",
+}));
 app.use(cookieParser());
 app.use(express.json());
 app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/posts', postRoutes);
+
 
 
 

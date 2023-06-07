@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
 
 import SocialMedia from "../../components/SocialMedia/SocialMedia";
 
 const SignIn = () => {
-    
     return (
 
         <div className="mt-10 grid grid-cols-3 gap-20">
@@ -13,9 +13,17 @@ const SignIn = () => {
                 <h2 className="text-3xl text-text font-bold text-center">
                     Sign in to your account
                 </h2>
-                <input type="text" placeholder="Username" className="text-xl px-4 py-2 rounded-full"/>
-                <input type="password" placeholder="Password" className="text-xl px-4 py-2 rounded-full"/>
-                <button className="bg-button text-white text-xl px-4 py-2 rounded-full hover:bg-button-hover">Sign In</button>
+                <input
+                    onChange={(e) => setUserName(e.target.value)}
+                    type="text" 
+                    placeholder="Username" 
+                    className="text-xl px-4 py-2 rounded-full"/>
+                <input
+                    onChange={(e) => setPassword(e.target.value)} 
+                    type="password" 
+                    placeholder="Password" 
+                    className="text-xl px-4 py-2 rounded-full"/>
+                <button className="bg-button text-white text-xl px-4 py-2 rounded-full hover:bg-button-hover" onClick={handleLogin}>Sign In</button>
             </form>
             <form className="bg-form flex flex-col px-8 py-12 rounded-lg mx-auto gap-10">
                 <p className="mx-auto text-text">Don't have any account?</p>
