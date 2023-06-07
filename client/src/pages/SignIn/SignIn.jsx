@@ -1,7 +1,12 @@
 import React from "react";
 
+
+import SocialMedia from "../../components/SocialMedia/SocialMedia";
+
 const SignIn = () => {
+    
     return (
+
         <div className="mt-10 grid grid-cols-3 gap-20">
             <img src="/logo.png" alt="Logo" width="1000px"/>
             <form className="bg-form flex flex-col px-8 py-12 rounded-lg  mx-auto gap-10">
@@ -27,8 +32,14 @@ const SignIn = () => {
                 </div>
                 <input type="password" placeholder="Password" className="text-xl px-4 py-2 rounded-full"/>
                 <button className="bg-button text-white text-xl px-4 py-2 rounded-full hover:bg-button-hover">Sign Up</button>
+                
+                
             </form>
-        </div>
+            <div className=" grid-cols-3  flex justify-center">
+                <SocialMedia/>
+                </div>
+            </div>
+
         );
 };
 
