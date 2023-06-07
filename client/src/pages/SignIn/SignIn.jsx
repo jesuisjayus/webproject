@@ -9,7 +9,6 @@ const SignIn = () => {
         e.preventDefault();
         try{
             const res = await axios.post("http://localhost:8000/api/auth/signin/", {userName, password});
-            console.log("res", res.data);
         } catch(err){
             console.log(err);
         }
