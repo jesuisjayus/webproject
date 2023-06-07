@@ -5,6 +5,18 @@ import axios from "axios";
 import SocialMedia from "../../components/SocialMedia/SocialMedia";
 
 const SignIn = () => {
+    const [userName, setUserName] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleLogin = async(e) => {
+        e.preventDefault();
+        try{
+            const res = await axios.post("http://localhost:8000/api/auth/signin/", {userName, password});
+        } catch(err){
+            console.log(err);
+        }
+    };
+
     return (
 
         <div className="mt-10 grid grid-cols-3 gap-20">
