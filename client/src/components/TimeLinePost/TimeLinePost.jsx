@@ -11,8 +11,9 @@ const TimeLinePost = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const timeLinePost = await axios.get(`/api/timeline/${currentUser.id}`);
+                const timeLinePost = await axios.get(`http://localhost:8000/api/posts/timeline`);
                 setTimeLine(timeLinePost.data);
+                console.log(timeLinePost.data);
             }
             catch (error) {
                 console.log(error);
@@ -26,8 +27,9 @@ const TimeLinePost = () => {
           {timeLine &&
             timeLine.map((post) => {
               return (
-                <div key={post._id}>
-                    <Post />
+                <div key={post._id} className="p-5">
+                    <Post post = {post} setData={setTimeLine} />
+
                 </div>
               );
             })}
