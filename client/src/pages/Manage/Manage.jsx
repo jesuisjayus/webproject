@@ -61,11 +61,14 @@ const Manage = () => {
     };
 
     const handleValidate = (event) => {
-        event.preventDefault();;
+        event.preventDefault();
         navigate("/profile/:id");
     }
 
-
+    const handleCancel = (event) => {
+        event.preventDefault();
+        navigate("/profile/:id");
+    }
 
     return (
         <div>
@@ -89,23 +92,21 @@ const Manage = () => {
                         <input type="text" placeholder="Birth Date (DD/MM/YYYY)" pattern="\d{2}/\d{2}/\d{4}" title="Format DD/MM/YYYY" className="bg-blue-100 rounded-full py-2 px-2" onChange={handleBirthDate} required/>
                         <textarea maxlength={500} title="max 500 characters" placeholder="Write a little description..." className="bg-blue-100 rounded-lg py-2 px-2" onChange={handleTextareaChange}></textarea>
                         <p>number of characters : {characterCount}/500</p>
-                        <div className="grid grid-cols-2 gap-1">
-                                <div style={{width:"100%"}}>
-                                    <button className="bg-button resize-none px-4 py-2 text-white rounded-full hover:bg-button-hover" style={{display: "flex", justifyContent:"center", alignItems:"flex-end", width:"60%"}}  onClick={handleValidate}><DoneIcon fontSize="large" style={{ marginRight: "8px" }} />Validate</button>
-                                </div>
-                            <Link to="/profile/:id">
-                                <div className="bg-red-500 text-white text-xl px-4 py-2 rounded-full hover:bg-red-300">
-                                    <CloseIcon fontSize="large" />
-                                    <span className="ml-8">Cancel</span>
-                                </div>
-                            </Link>
+                        <div className="flex gap-1">
+                                <button className="bg-button resize-none flex items-center justify-center px-4 py-2 text-white rounded-full hover:bg-button-hover w-full" onClick={handleValidate}>
+                                <DoneIcon fontSize="large" style={{ marginRight: "8px" }} />
+                                Validate
+                                </button>
+                                <button className="bg-red-500 text-white resize-none flex items-center justify-center px-4 py-2 rounded-full hover:bg-red-300 w-full" onClick={handleCancel}>
+                                    <CloseIcon fontSize="large" style={{ marginRight: "8px" }} />
+                                    Cancel
+                                </button>
                         </div>
                 </form>     
                 </div>
             </div>
         </div>
-        );
-    };
+);};
 
 
 export default Manage; 
