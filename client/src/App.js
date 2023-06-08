@@ -6,7 +6,7 @@ import Profile from './pages/Profile/Profile';
 import Manage from './pages/Manage/Manage';
 import Error from './pages/Error/Error';
 import NewPost from './pages/NewPost/NewPost';
-import NewPostDetail from './pages/NewPostDetail/NewPostDetail';
+import PostDetail from './pages/PostDetail/PostDetail';
 import AboutUs from './pages/AboutUs/AboutUs';
 
 
@@ -51,8 +51,8 @@ const router = createBrowserRouter([
       element: <NewPost />,
      },
      {
-      path: "/NewPostDetail",
-      element: <NewPostDetail />,
+      path: "/PostDetail/:id",
+      element: <PostDetail />,
      },
      {
       path: "/AboutUs",
