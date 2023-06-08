@@ -2,7 +2,7 @@ import React from "react";
 import Leftbar from "../../components/HomeLeftbar/HomeLeftbar";
 import Navbar from "../../components/Navbar/Navbar";
 import SignIn from "../SignIn/SignIn";
-
+import TimeLinePost from "../../components/TimeLinePost/TimeLinePost";
 import {useSelector } from "react-redux";
 import {useNavigate} from "react-router-dom";
 
@@ -23,7 +23,7 @@ const Home = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4">
                     <div className="px-6"><Leftbar /></div>
                     <div className="col-span-3 border-t-slate-800 px-6">
-                        <p>Annonce</p>
+                        <TimeLinePost/>
                     </div>
                 </div>
                 </>
