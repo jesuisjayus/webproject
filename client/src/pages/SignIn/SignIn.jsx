@@ -3,6 +3,7 @@ import axios from "axios";
 import { loginFailed, loginStart, loginSuccess } from "../../redux/userSlice";
 import {useNavigate} from "react-router-dom";
 import { useDispatch } from "react-redux";
+import SocialMedia from "../../components/SocialMedia/SocialMedia";
 const SignIn = () => {
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
@@ -35,6 +36,7 @@ const SignIn = () => {
             dispatch(loginSuccess(res.data));
             navigate("/home");
             console.log("res", res.data);
+
         } catch(err){
             alert("Wrong username or password");
             dispatch(loginFailed());
@@ -43,6 +45,7 @@ const SignIn = () => {
     };
 
     return (
+
         <div className="mt-10 grid grid-cols-3 gap-20">
             <img src="/logo.png" alt="Logo" width="1000px"/>
             <form className="bg-form flex flex-col px-8 py-12 rounded-lg  mx-auto gap-10">
@@ -97,7 +100,11 @@ const SignIn = () => {
                 />
                 <button className="bg-button text-white text-xl px-4 py-2 rounded-full hover:bg-button-hover" onClick={handleSignUp}>Sign Up</button>
             </form>
-        </div>
+            <div className=" grid-cols-3  flex justify-center">
+                <SocialMedia/>
+                </div>
+            </div>
+
         );
 };
 
