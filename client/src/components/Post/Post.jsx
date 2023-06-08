@@ -32,7 +32,7 @@ const Post = ({post, setData}) => {
                     <h1 className="text-3xl text-text font-bold text-left">
                         {post.title}
                     </h1>
-                    <Link to="/NewPostDetail">
+                    <Link to={`/PostDetail/${post._id}`}>
                         <button className="bg-red-500 px-2 py-1 text-white rounded-full float-right hover:bg-slate-200">
                             +
                         </button>
