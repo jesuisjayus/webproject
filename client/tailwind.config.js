@@ -6,6 +6,8 @@ module.exports = {
       colors: {
         'form':  '#7272AB',
         'button': '#0F1C37',
+        'red-button': '#ff5353',
+        'red-button-hover': '#fc6060',
         'button-hover': '#1A2A4A',
         'bgcolor': '#C8D9EE',
         'text': '#0F1C37',
