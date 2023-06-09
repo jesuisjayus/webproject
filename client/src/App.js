@@ -10,7 +10,8 @@ import PostDetail from './pages/PostDetail/PostDetail';
 import AboutUs from './pages/AboutUs/AboutUs';
 import Chat from './pages/Chat/Chat';
 import { createContext, useState, useEffect } from 'react';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 export const ThemeContext=createContext(null);
 
 
@@ -86,10 +87,25 @@ function App() {
     };
    
   }
+  
+  const buttonStyles = {
+    padding: '10px 20px',
+    background: theme === 'light' ? '#ffffff' : '#000000',
+    color: theme === 'light' ? '#000000' : '#ffffff',
+    border: 'none',
+    borderRadius: '5px',
+    cursor: 'pointer',
+    
+  };
   return (
 
       <div className={`App ${theme}`}>
-              <button onClick={ToggleTheme}>Toggle Theme</button>
+                <button className="theme-toggle" onClick={ToggleTheme}>
+        <FontAwesomeIcon
+          icon={theme === 'light' ? faSun : faMoon}
+          size="2x"
+        />
+      </button>
       <RouterProvider router={router}></RouterProvider>
     </div>
  

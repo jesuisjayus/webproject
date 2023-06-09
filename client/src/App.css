@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 .dark {
-    background-color: #333;
+    background-color: #000000;
     color: #fff;
   }
   .light {
     background-color: #fff;
-    color: #333;
+    color: #000000;
   }
