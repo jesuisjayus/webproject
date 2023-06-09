@@ -2,17 +2,20 @@ import React from "react";
 import Leftbar from "../../components/NewPostLeftbar/NewPostLeftbar";
 import { useState } from 'react';
 import { Link } from "react-router-dom";
-import ChooseCategory from "../../components/ChooseCategory/ChooseCategory";
 import Navbar from "../../components/Navbar/Navbar";
 import { useNavigate } from "react-router-dom";
-
+import axios from "axios";
+import { useSelector } from 'react-redux';
 import SocialMedia from "../../components/SocialMedia/SocialMedia";
+import { Select } from "@mui/material";
 const NewPost = () => {
+    const {currentUser} = useSelector((state) => state.user);
     const [characterCount, setCharacterCount] = useState(0);  // for short description
     const [characterCount2, setCharacterCount2] = useState(0); // for description
     const [shortDescription, setShortDescription] = useState("");
     const [longDescription, setLongDescription] = useState("");
     const [title, setTitle] = useState("");
+    const [category, setCategory] = useState("");
     const navigate = useNavigate();
 
     const handleTextareaChange_short = (event) => {
@@ -27,10 +30,23 @@ const NewPost = () => {
         setLongDescription(text);
     };
 
-    const handlePublish = (event) => {
-        event.preventDefault();
-        console.log(title+""+shortDescription+""+longDescription);
-        navigate("/home");
+    const handlePublish = async(e) => {
+        e.preventDefault();
+        alert(category);
+        try{
+            const res = await axios.post("http://localhost:8000/api/posts/", 
+            {
+                userId: currentUser._id,
+                title: title,
+                text: shortDescription,
+                description: longDescription,
+                category: category,
+            });
+            navigate("/home");
+
+        } catch(err){
+            console.log(err);
+        }
     };
 
     return (
@@ -48,7 +64,14 @@ const NewPost = () => {
                             New Post
                         </h2>
                         <input type="text" placeholder="Title" className="text-xl px-4 py-2 rounded-full" onChange={(e) => setTitle(e.target.value)}/>
-                        <ChooseCategory /> 
+                        <div>
+                            <select onChange={(e) => setCategory(e.target.value)}>
+                            <option value="">Choix de la catégorie</option>
+                            <option value="music">Musique</option>
+                            <option value="art">Art</option>
+                            <option value="moncul">MonCul</option>
+                        </select>                       
+                        </div>
                         <textarea maxlength={280} title="max 280 characters" placeholder="Write a short description..." className="bg-blue-100 rounded-lg py-2 px-2" onChange={handleTextareaChange_short}></textarea>
                         <p className="text-text">Number of characters : {characterCount}/280</p>
                         <textarea maxlength={1000} title="max 1000 characters" placeholder="Write the full description..." className="bg-blue-100 rounded-lg py-2 px-2" onChange={handleTextareaChange_description}></textarea>
