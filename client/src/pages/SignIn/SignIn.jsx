@@ -46,9 +46,12 @@ const SignIn = () => {
 
     return (
 
-        <div className="mt-10 grid grid-cols-3 gap-20">
-            <img src="/logo.png" alt="Logo" width="1000px"/>
-            <form className="bg-form flex flex-col px-8 py-12 rounded-lg  mx-auto gap-10">
+        <div className="p-4">
+            <div className="flex flex-col items-center justify-center gap-2">
+                <img src="/logo.png" alt="skillshare" width="150px"/>
+                <img src="/nom.png" alt="skillshare" width="150px"/>
+            </div>
+            <form className="bg-gradient-to-b from-form-pink to-form-purple flex flex-col px-8 py-12 rounded-lg w-6/12 mx-auto gap-8 my-5">
                 <h2 className="text-3xl text-text font-bold text-center">
                     Sign in to your account
                 </h2>
@@ -64,7 +67,7 @@ const SignIn = () => {
                     className="text-xl px-4 py-2 rounded-full"/>
                 <button className="bg-button text-white text-xl px-4 py-2 rounded-full hover:bg-button-hover" onClick={handleLogin}>Sign In</button>
             </form>
-            <form className="bg-form flex flex-col px-8 py-12 rounded-lg mx-auto gap-10">
+            <form className="bg-gradient-to-b from-form-purple to-form-blue flex flex-col px-8 py-12 rounded-lg w-6/12 mx-auto gap-8 my-5">
                 <p className="mx-auto text-text">Don't have any account?</p>
                 <h2 className="text-3xl text-text font-bold text-center">
                     Create an account
