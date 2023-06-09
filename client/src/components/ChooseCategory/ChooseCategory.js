@@ -1,8 +1,13 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Select from 'react-select'
 
 function ChooseCategory()
 {
+  const [selectedCategory, setSelectedCategory] = useState("");
+
+  const categoryChange =(selectedOption) =>{
+    setSelectedCategory(selectedOption);
+  };
     var categorychoice =[
 
         {
@@ -37,7 +42,7 @@ function ChooseCategory()
     
       return (
         <div>
-          <Select options={categorychoice} styles={customStyles} />
+          <select options={categorychoice} styles={customStyles} onChange={categoryChange} value={selectedCategory}>Choix de la catégorie</select>
         </div>
       );
     }
