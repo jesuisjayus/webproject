@@ -1,13 +1,13 @@
-import firebase from 'firebase/app'
+/*import React from 'react'
 
 
-import 'firebase/firestone';
-import 'firebase/auth';
+function Chat(){
 
-import {useAuthstate} from 'react-firebase-hooks/auth';
-import {useCollectionData} from 'react-firebase-hooks/firestore';
+    return (
+        <div>
+        </div>
+    )
+}
 
-firebase.initializeApp({
+export default Chat
 
-
-})

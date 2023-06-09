@@ -8,7 +8,10 @@ import Error from './pages/Error/Error';
 import NewPost from './pages/NewPost/NewPost';
 import PostDetail from './pages/PostDetail/PostDetail';
 import AboutUs from './pages/AboutUs/AboutUs';
+import Chat from './pages/Chat/Chat';
+import { createContext, useState, useEffect } from 'react';
 
+export const ThemeContext=createContext(null);
 
 
 const Layout = () => {
@@ -58,16 +61,38 @@ const router = createBrowserRouter([
       path: "/AboutUs",
       element: <AboutUs />,
      },
+     {
+      path: "/Chat",
+      element: <Chat />,
+     },
   ],
 },
 ]);
 
 function App() {
+  const [theme, setTheme]=useState("light")
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
+  const ToggleTheme=()=>{
+    
+    if (theme==='light')
+    {
+      setTheme('dark');
+
+    }
+    else{
+      setTheme('light');
+    };
+   
+  }
   return (
-    <div>
+
+      <div className={`App ${theme}`}>
+              <button onClick={ToggleTheme}>Toggle Theme</button>
       <RouterProvider router={router}></RouterProvider>
     </div>
-    
+ 
   );
 }
 
