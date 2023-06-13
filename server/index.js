@@ -11,6 +11,8 @@ import cors from "cors";
 const app = express();
 dotenv.config();
 
+
+
 const connect = () => {
     mongoose
         .connect(process.env.MONGO)
@@ -23,7 +25,9 @@ const connect = () => {
 
 app.use(cors({
     origin: "http://localhost:3000",
+    credentials: true,
 }));
+
 app.use(cookieParser());
 app.use(express.json());
 app.use('/api/users', userRoutes);
@@ -31,10 +35,12 @@ app.use('/api/auth', authRoutes);
 app.use('/api/posts', postRoutes);
 
 
-
+app.get('/read-cookie', (req, res)=> {
+    const cookieValue=req.cookies.access_token;
+    res.send(cookieValue);
+});
 
 app.listen(8000, () => {
     connect();
     console.log("Listening on port 8000");
 });
-
