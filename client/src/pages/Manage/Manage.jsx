@@ -97,7 +97,7 @@ const Manage = () => {
                                 <DoneIcon fontSize="large" style={{ marginRight: "8px" }} />
                                 Validate
                                 </button>
-                                <button className="bg-red-500 text-white resize-none flex items-center justify-center px-4 py-2 rounded-full hover:bg-red-300 w-full" onClick={handleCancel}>
+                                <button className="bg-red-button text-white resize-none flex items-center justify-center px-4 py-2 rounded-full hover:bg-red-button-hover w-full" onClick={handleCancel}>
                                     <CloseIcon fontSize="large" style={{ marginRight: "8px" }} />
                                     Cancel
                                 </button>
