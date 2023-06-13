@@ -2,6 +2,7 @@ import User from '../models/User.js';
 import { handleError } from '../error.js';
 import Post from '../models/Post.js';
 
+
 export const getUser = async (req, res, next) => {
     try {
         const user = await User.findById(req.params.id);
@@ -12,7 +13,8 @@ export const getUser = async (req, res, next) => {
 };
 
 export const update = async (req, res, next) => {
-    if(req.params.id === req.user.id) {
+    const user = await User.findById(req.params.id);
+    if(req.params.id === user._id) {
         try{
             const updatedUser = await User.findByIdAndUpdate(req.params.id, {
                 $set: req.body
@@ -53,7 +55,7 @@ export const follow = async (req, res, next) => {
             await user.save();
             currentUser.following.push(req.params.id);
             await currentUser.save();
-        } 
+        }
         else {
             res.status(403)
             .json('You are already following this user');
@@ -82,5 +84,5 @@ export const unfollow = async (req, res, next) => {
         res.status(200).json('User unfollowed successfully');
     }catch(err) {
         next(err);
-    } 
+    }
 };
