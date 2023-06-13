@@ -25,7 +25,7 @@ const Navbar = () =>{
   return (
       <div className="flex justify-between items-center mb-5">
       <div className="mx-auto md:mx-0">
-        <Link to="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+        <Link to="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
         <img src="/logo.png" alt="Logo" width="40px" className="ml-8" />
         </Link>
       </div>

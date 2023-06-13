@@ -60,12 +60,12 @@ const SignIn = () => {
                     onChange={(e) => setUserName(e.target.value)}
                     type="text" 
                     placeholder="Username" 
-                    className="text-xl px-4 py-2 rounded-full"/>
+                    className="bg-blue-100 text-xl px-4 py-2 rounded-full"/>
                 <input
                     onChange={(e) => setPassword(e.target.value)} 
                     type="password" 
                     placeholder="Password" 
-                    className="text-xl px-4 py-2 rounded-full"/>
+                    className="bg-blue-100 text-xl px-4 py-2 rounded-full"/>
                 <button className="bg-button text-white text-xl px-4 py-2 rounded-full hover:bg-button-hover" onClick={handleLogin}>Sign In</button>
             </form>
             <form className="bg-gradient-to-b from-form-purple to-form-blue flex flex-col px-8 py-12 rounded-lg w-6/12 mx-auto gap-8 my-5">
@@ -77,30 +77,30 @@ const SignIn = () => {
                 <input type="text" 
                      onChange={(e) => setFirstname(e.target.value)}
                      placeholder="Firstname" 
-                     className="text-xl px-4 py-2 rounded-full"
+                     className="bg-blue-100 text-xl px-4 py-2 rounded-full"
                 />
                 <input type="text"
                     onChange={(e) => setLastname(e.target.value)}
                      placeholder="Lastname"
-                     className="text-xl px-4 py-2 rounded-full"
+                     className="bg-blue-100 text-xl px-4 py-2 rounded-full"
                 />
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                 <input type="text" 
                     onChange={(e) => setUserName(e.target.value)}
                     placeholder="Username" 
-                    className="text-xl px-4 py-2 rounded-full"
+                    className="bg-blue-100 text-xl px-4 py-2 rounded-full"
                 />
                 <input type="text"
                     onChange={(e) => setEmail(e.target.value)} 
                     placeholder="Email" 
-                    className="text-xl px-4 py-2 rounded-full"
+                    className="bg-blue-100 text-xl px-4 py-2 rounded-full"
                 />
                 </div>
                 <input type="password"
                     onChange={(e) => setPassword(e.target.value)} 
                     placeholder="Password" 
-                    className="text-xl px-4 py-2 rounded-full"
+                    className="bg-blue-100 text-xl px-4 py-2 rounded-full"
                 />
                 <button className="bg-button text-white text-xl px-4 py-2 rounded-full hover:bg-button-hover" onClick={handleSignUp}>Sign Up</button>
             </form>
