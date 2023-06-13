@@ -25,7 +25,7 @@ const TimeLinePost = () => {
     
     return (
         <div className="mt-6">
-          <div>
+          <div className="p-5">
               <select className="bg-blue-100 px-4 py-2 rounded-full"onChange={(e) => setCategory(e.target.value)}>
               <option value="">Choix de la catégorie</option>
               <option value="musique">Musique</option>
@@ -35,7 +35,7 @@ const TimeLinePost = () => {
           </div>
           {timeLine &&
             timeLine.map((post) => {
-              if(post.category === category || category === ""){
+              if(post.userId === currentUser._id){
                 return (
                   <div key={post._id} className="p-5">
                       <Post post = {post} setData={setTimeLine} />
