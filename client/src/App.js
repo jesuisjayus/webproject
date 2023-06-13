@@ -88,25 +88,28 @@ function App() {
    
   }
   
-  const buttonStyles = {
-    padding: '10px 20px',
+
+  const formStyles = {
+
     background: theme === 'light' ? '#ffffff' : '#000000',
     color: theme === 'light' ? '#000000' : '#ffffff',
-    border: 'none',
-    borderRadius: '5px',
-    cursor: 'pointer',
-    
+
   };
+  if (theme === 'dark') {
+    formStyles['filter'] = 'saturate(50%) brightness(70%)';
+  }
+
   return (
 
       <div className={`App ${theme}`}>
+        
                 <button className="theme-toggle" onClick={ToggleTheme}>
         <FontAwesomeIcon
           icon={theme === 'light' ? faSun : faMoon}
           size="2x"
         />
       </button>
-      <RouterProvider router={router}></RouterProvider>
+      <RouterProvider router={router} formStyles={formStyles} ></RouterProvider>
     </div>
  
   );
