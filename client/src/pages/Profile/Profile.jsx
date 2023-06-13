@@ -1,11 +1,28 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Leftbar from "../../components/ProfileLeftbar/ProfileLeftbar"; 
 import Navbar from "../../components/Navbar/Navbar";
 import { useSelector } from 'react-redux';
+import Post from "../../components/Post/Post";
+import axios from 'axios';
 
 const Profile = () => {
 
     const {currentUser} = useSelector((state) => state.user);
+    const [timeLine, setTimeLine] = useState(null);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const timeLinePost = await axios.get(`http://localhost:8000/api/posts/timeline`);
+                setTimeLine(timeLinePost.data);
+                console.log(timeLinePost.data);
+            }
+            catch (error) {
+                console.log(error);
+            }
+        };
+        fetchData();
+    }, [currentUser._id]);
 
     return (
         <div>
@@ -40,6 +57,20 @@ const Profile = () => {
                 </form>     
                 </div>
             </div>
-        </div>
+            <div className="mt-6">
+            {timeLine &&
+            timeLine.map((post) => {
+                console.log(currentUser.id);
+                console.log(post.userId);
+                if(post.userId === currentUser._id){
+                return (
+                    <div key={post._id} className="p-5">
+                        <Post post = {post} setData={setTimeLine} />
+                    </div>
+                );
+                }
+            })}
+      </div>
+    </div>
 );};
 export default Profile;
