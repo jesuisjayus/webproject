@@ -26,32 +26,54 @@ const PostDetail = () => {
 
     return (
         <div>
-        {userData && ( 
-        <>
-            <div>
-                <Navbar />
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-4">
-                <div className="px-6">
-                    <Leftbar />
+            {userData && ( 
+            <>
+                <div>
+                    <Navbar />
                 </div>
-                <div className="col-span-3 border-t-slate-800 px-6">
-                    <div>
-                        <h1 className="text-3xl font-bold mb-4">{state.title}</h1>
-                        <h1 className="text-3xl font-bold mb-4">{state.category}</h1>
-                        <h1 className="text-3xl font-bold mb-4">{state.text}</h1>
-                        <h1 className="text-3xl font-bold mb-4">{state.description}</h1>
+                <div className="grid grid-cols-1 md:grid-cols-4">
+                    <div className="px-6">
+                        <Leftbar />
                     </div>
-                    <div>
-                        <h1 className="text-3xl font-bold mb-4">Qui suis-je?</h1>
-                        <h1 className="text-3xl font-bold mb-4">{userData.userName}</h1>
-                        <h1 className="text-3xl font-bold mb-4">{userData.description}</h1>
-                    </div>
+                    <div className="col-span-3 border-t-slate-800 px-6">
+                        <form className="bg-gradient-to-bl from-form-pink via-form-purple to-form-blue flex flex-col px-8 py-12 rounded-lg w-8/12 mx-0 gap-5">
+                                <h2 className="text-3xl text-text font-bold text-center rounded">
+                                    Post Details
+                                </h2> 
+                            <div className="bg-blue-100 text-xl px-4 py-2 rounded-full">
+                                <h1><b> </b> {state.title}</h1>
+                            </div>
+                            <div className="bg-blue-100 text-xl px-4 py-2 rounded-full">
+                                <h1><b> </b> {state.category}</h1>
+                            </div>
+                            <div className="bg-blue-100 text-xl px-4 py-2 rounded-full">
+                                <h1><b> </b> {state.text}</h1>
+                            </div>
+                            <div className="bg-blue-100 text-xl px-4 py-2 rounded-full">
+                                <h1><b> </b> {state.description}</h1>
+                            </div>
+                            <h1 className="text-3xl font-bold mb-4">Qui suis-je?</h1>
+
+                            <div className="bg-blue-100 text-xl px-4 py-2 rounded-lg">
+                                <h1><b>UserName : </b> {userData.userName}</h1>
+                                <h1><b>Last Name : </b> {userData.firstName}</h1>
+                                <h1><b>First Name : </b> {userData.lastName}</h1>
+                            </div>
+                            <div className="bg-blue-100 text-xl px-4 py-2 rounded-full">
+                                <h1><b>Email : </b> {userData.email}</h1>
+                            </div>
+                            <div className="bg-blue-100 text-xl px-4 py-2 rounded-full">
+                                <h1><b>Birth Date : </b> {userData.birthDate}</h1>
+                            </div>
+                            <div className="bg-blue-100 text-xl px-4 py-2 rounded-lg text-justify">
+                                <h1><b>Description : </b> {userData.description}</h1>
+                            </div>
+                        </form>  
+                    </div> 
                 </div>
-            </div>
-        </>)}
+            </>)}
         </div>
-        );
+    );
 };
 
         

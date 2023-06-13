@@ -34,7 +34,7 @@ const Profile = () => {
                     <div className="bg-blue-100 text-xl px-4 py-2 rounded-full">
                         <h1><b>Birth Date : </b> {currentUser.birthDate}</h1>
                     </div>
-                    <div className="bg-blue-100 text-xl px-4 py-2 rounded-lg ">
+                    <div className="bg-blue-100 text-xl px-4 py-2 rounded-lg text-justify">
                         <h1><b>Description : </b> {currentUser.description}</h1>
                     </div>
                 </form>     

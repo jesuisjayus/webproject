@@ -63,9 +63,9 @@ const NewPost = () => {
                         <h2 className="text-3xl text-text font-bold text-center">
                             New Post
                         </h2>
-                        <input type="text" placeholder="Title" className="text-xl px-4 py-2 rounded-full" onChange={(e) => setTitle(e.target.value)}/>
+                        <input type="text" placeholder="Title" className="bg-blue-100 text-xl px-4 py-2 rounded-full" onChange={(e) => setTitle(e.target.value)}/>
                         <div>
-                            <select onChange={(e) => setCategory(e.target.value)}>
+                            <select className="bg-blue-100 px-4 py-2 rounded-full" onChange={(e) => setCategory(e.target.value)}>
                             <option value="">Choix de la catégorie</option>
                             <option value="music">Musique</option>
                             <option value="art">Art</option>

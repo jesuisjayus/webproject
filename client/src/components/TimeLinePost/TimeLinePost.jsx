@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 const TimeLinePost = () => {
     const [timeLine, setTimeLine] = useState(null);
     const {currentUser} = useSelector((state) => state.user);
+    const [category, setCategory] = useState("");
 
     useEffect(() => {
         const fetchData = async () => {
@@ -24,14 +25,23 @@ const TimeLinePost = () => {
     
     return (
         <div className="mt-6">
+          <div>
+              <select className="bg-blue-100 px-4 py-2 rounded-full"onChange={(e) => setCategory(e.target.value)}>
+              <option value="">Choix de la catégorie</option>
+              <option value="musique">Musique</option>
+              <option value="art">Art</option>
+              <option value="moncul">MonCul</option>
+              </select>                       
+          </div>
           {timeLine &&
             timeLine.map((post) => {
-              return (
-                <div key={post._id} className="p-5">
-                    <Post post = {post} setData={setTimeLine} />
-
-                </div>
-              );
+              if(post.category === category || category === ""){
+                return (
+                  <div key={post._id} className="p-5">
+                      <Post post = {post} setData={setTimeLine} />
+                  </div>
+                );
+              }
             })}
         </div>
       );
