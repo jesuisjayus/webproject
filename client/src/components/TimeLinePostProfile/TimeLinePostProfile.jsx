@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import Post from "../Post/Post";
+import PostProfile from "../PostProfile/PostProfile";
 import { useSelector } from "react-redux";
 
 
@@ -23,13 +23,13 @@ const TimeLinePostProfile = () => {
     }, [currentUser._id]);
     
     return (
-        <div className="mt-6">
+        <div className="mt-2">
           {timeLine &&
             timeLine.map((post) => {
               if(post.userId === currentUser._id){
                 return (
-                  <div key={post._id} className="p-5">
-                      <Post post = {post} setData={setTimeLine} />
+                  <div key={post._id}>
+                      <PostProfile post = {post} setData={setTimeLine} />
                   </div>
                 );
               }
