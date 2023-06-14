@@ -44,12 +44,9 @@ const Post = ({post, setData}) => {
                         Delete
                     </button>
                 </div>
-                <p className="text-1xl text-text text-center bg-blue-100 px-4 py-1 w-2/12 rounded-full">
+                <p className="text-1xl text-text text-center bg-blue-100 px-4 py-1 w-3/12 rounded-full">
                     {post.category}
-                </p>
-                <p className="text-2xl text-center text-left">
-                    {post.text}
-                </p>    
+                </p>   
                 <p className="text-2xl text-center text-left">
                     {post.description}
                 </p>            
