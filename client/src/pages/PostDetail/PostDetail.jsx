@@ -51,7 +51,7 @@ const PostDetail = () => {
                             </div>
                         </form>
                         <form className="bg-gradient-to-b from-form-purple to-form-blue flex flex-col px-8 py-12 rounded-lg w-8/12 mx-0 my-5 gap-5">
-                            <h1 className="text-3xl font-bold mb-4">Qui suis-je?</h1>
+                            <h1 className="text-3xl font-bold mb-4">Who I am?</h1>
                             <div className="bg-blue-100 text-xl px-4 py-2 rounded-lg">
                                 <h1><b>UserName : </b> {userData.userName}</h1>
                                 <h1><b>First Name : </b> {userData.firstName}</h1>
