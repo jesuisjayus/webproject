@@ -50,9 +50,6 @@ const Post = ({post, setData}) => {
                 <p className="text-2xl text-center text-left">
                     {post.description}
                 </p>            
-                <p className="text-1xl text-center bg-blue-100 px-4 py-1 w-2/12 rounded-full ml-auto">
-                    {userData.userName}
-                </p>
             </form>
         </>)}
         </div>

@@ -120,7 +120,7 @@ const Manage = () => {
                                 <div style={profilePictureStyle}>
                                     <img src={selectedImage} alt="" style={imageStyle} />
                                 </div>
-                                    <input type="file" accept=".jpeg, .jpg, .png" onChange={handleImageChange} />
+                                    <input type="file" accept=".jpeg, .jpg, .png" onChange={handleImageChange}/>
                                     <input type="text" placeholder="Username" className="bg-blue-100 rounded-full py-2 px-2" onChange={(e) => setUserName(e.target.value)}/>
                                     <input type="text" placeholder="Birth Date (DD/MM/YYYY)" pattern="\d{2}/\d{2}/\d{4}" title="Format DD/MM/YYYY" className="bg-blue-100 rounded-full py-2 px-2" onChange={handleBirthDate} required/>
                                     <textarea maxlength={500} title="max 500 characters" placeholder="Write a little description..." className="bg-blue-100 rounded-lg py-2 px-2" onChange={handleTextareaChange}></textarea>
