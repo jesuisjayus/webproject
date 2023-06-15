@@ -66,10 +66,10 @@ const NewPost = () => {
                         <input type="text" placeholder="Title" className="bg-blue-100 text-xl px-4 py-2 rounded-full" onChange={(e) => setTitle(e.target.value)}/>
                         <div>
                             <select className="bg-blue-100 px-4 py-2 rounded-full" onChange={(e) => setCategory(e.target.value)}>
-                            <option value="">Choix de la catégorie</option>
-                            <option value="music">Musique</option>
+                            <option value="">Category</option>
+                            <option value="music">Music</option>
                             <option value="art">Art</option>
-                            <option value="moncul">MonCul</option>
+                            <option value="homework">Homework</option>
                         </select>                       
                         </div>
                         <textarea maxlength={280} title="max 280 characters" placeholder="Write a short description..." className="bg-blue-100 rounded-lg py-2 px-2" onChange={handleTextareaChange_short}></textarea>

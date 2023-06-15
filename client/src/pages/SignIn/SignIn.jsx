@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
 import { loginFailed, loginStart, loginSuccess } from "../../redux/userSlice";
 import {useNavigate} from "react-router-dom";
 import { useDispatch } from "react-redux";
 import SocialMedia from "../../components/SocialMedia/SocialMedia";
+import { ThemeContext } from "../../App";
+import '../../App.css';
 
 const SignIn = () => {
+    
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
@@ -14,6 +17,8 @@ const SignIn = () => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    const theme = useContext(ThemeContext);
 
     const handleSignUp = async(e) => {
         e.preventDefault();
@@ -55,12 +60,12 @@ const SignIn = () => {
 
     return (
 
-        <div className="p-4">
+        <div className={`p-4 ${theme}`}>
             <div className="flex flex-col items-center justify-center gap-2">
                 <img src="/logo.png" alt="skillshare" width="150px"/>
                 <img src="/nom.png" alt="skillshare" width="150px"/>
             </div>
-            <form className="bg-gradient-to-b from-form-pink to-form-purple flex flex-col px-8 py-12 rounded-lg w-6/12 mx-auto gap-8 my-5">
+            <form className={`bg-gradient-to-b from-form-pink to-form-purple flex flex-col px-8 py-12 rounded-lg w-6/12 mx-auto gap-8 my-5 ${theme}`}>
                 <h2 className="text-3xl text-text font-bold text-center">
                     Sign in to your account
                 </h2>
@@ -68,12 +73,13 @@ const SignIn = () => {
                     onChange={(e) => setUserName(e.target.value)}
                     type="text" 
                     placeholder="Username" 
-                    className="text-xl px-4 py-2 rounded-full"/>
-                <input
+                    className={`text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}
+                    />
+                        <input
                     onChange={(e) => setPassword(e.target.value)} 
                     type="password" 
                     placeholder="Password" 
-                    className="text-xl px-4 py-2 rounded-full"/>
+                    className={`text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}/>
                 <button className="bg-button text-white text-xl px-4 py-2 rounded-full hover:bg-button-hover" onClick={handleLogin}>Sign In</button>
             </form>
             <form className="bg-gradient-to-b from-form-purple to-form-blue flex flex-col px-8 py-12 rounded-lg w-6/12 mx-auto gap-8 my-5">
@@ -85,30 +91,30 @@ const SignIn = () => {
                 <input type="text" 
                      onChange={(e) => setFirstname(e.target.value)}
                      placeholder="Firstname" 
-                     className="text-xl px-4 py-2 rounded-full"
-                />
+                     className={`text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}
+                     />
                 <input type="text"
                     onChange={(e) => setLastname(e.target.value)}
                      placeholder="Lastname"
-                     className="text-xl px-4 py-2 rounded-full"
-                />
+                     className={`text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}
+                     />
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                 <input type="text" 
                     onChange={(e) => setUserName(e.target.value)}
                     placeholder="Username" 
-                    className="text-xl px-4 py-2 rounded-full"
+                    className={`text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}
                 />
                 <input type="text"
                     onChange={(e) => setEmail(e.target.value)} 
                     placeholder="Email" 
-                    className="text-xl px-4 py-2 rounded-full"
+                    className={`text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}
                 />
                 </div>
                 <input type="password"
                     onChange={(e) => setPassword(e.target.value)} 
                     placeholder="Password" 
-                    className="text-xl px-4 py-2 rounded-full"
+                    className={`text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}
                 />
                 <button className="bg-button text-white text-xl px-4 py-2 rounded-full hover:bg-button-hover" onClick={handleSignUp}>Sign Up</button>
             </form>

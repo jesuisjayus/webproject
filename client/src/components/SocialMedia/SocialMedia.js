@@ -1,8 +1,11 @@
-
+import { useContext } from "react";
+import { ThemeContext } from "../../App";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faTwitter, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
-function SocialMedia () {
+function SocialMedia() {
+  const theme = useContext(ThemeContext);
+
   const socialMediaIcons = [
     { icon: faFacebookF, url: "https://facebook.com" },
     { icon: faTwitter, url: "https://twitter.com" },
@@ -15,12 +18,16 @@ function SocialMedia () {
       href={item.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="justify-center"
-
+      className={`social-media-link ${theme === "dark" ? "dark" : ""}`}
     >
-      <FontAwesomeIcon icon={item.icon} size="2x"  className="mr-2 justify-center" />
+      <FontAwesomeIcon
+        icon={item.icon}
+        size="2x"
+        className={`social-media-icon ${theme === "dark" ? "dark" : "light"}mr-2 justify-center` }
+
+      />
     </a>
-    
   ));
-};
+}
+
 export default SocialMedia;

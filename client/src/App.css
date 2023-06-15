@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 .dark {
-    background-color: #000000;
-    color: #fff;
+    background-color: #0F1C37;
+    color: #fffefe;
   }
   .light {
     background-color: #fff;
@@ -13,3 +13,14 @@
   .diminished-colors {
     filter: saturate(50%) brightness(70%);
   }
+
+
+  .social-media-icon.dark {
+    color: #ffffff; /* Icon color in dark mode */
+  }
+
+  .light .social-media-icon {
+    color: rgb(2, 2, 2); /* Icon color in light mode */
+  }
+
+  
