@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import axios from "axios";
 import Post from "../Post/Post";
 import { useSelector } from "react-redux";
-
+import { categories } from "../Category/category";
 
 const TimeLinePost = () => {
     const [timeLine, setTimeLine] = useState(null);
@@ -15,6 +15,7 @@ const TimeLinePost = () => {
                 const timeLinePost = await axios.get(`http://localhost:8000/api/posts/timeline`);
                 setTimeLine(timeLinePost.data);
                 console.log(timeLinePost.data);
+                console.log(categories[0].value);
             }
             catch (error) {
                 console.log(error);
@@ -26,11 +27,13 @@ const TimeLinePost = () => {
     return (
         <div className="mt-6">
           <div className="p-5">
-              <select className="bg-blue-100 px-4 py-2 rounded-full"onChange={(e) => setCategory(e.target.value)}>
-              <option value="">Category</option>
-              <option value="music">Music</option>
-              <option value="art">Art</option>
-              <option value="homework">Homework</option>
+              <select className="bg-blue-100 px-4 py-2 rounded-full" onChange={(e) => setCategory(e.target.value)}>
+                  {categories && categories.map((category) => {
+                    return (
+                      <option key={category.value}>{category.label}</option> 
+                    )
+                  })
+                  }
               </select>                       
           </div>
           {timeLine &&
