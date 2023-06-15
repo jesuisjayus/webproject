@@ -13,13 +13,16 @@ export const signup = async (req, res, next) => {
 
         const token = jwt.sign({ id: newUser._id }, process.env.JWT);
 
+        newUser.set('access_token', token);
+        await newUser.save();
+
         const {password, ...otherDatas} = newUser._doc;
 
         res.cookie('access_token', token, {
             httpOnly: false
         })
         .status(200)
-        .json({access_token: token, otherDatas});
+        .json({otherDatas});
     } catch(err) {
         next(err);
     }
@@ -44,7 +47,7 @@ export const signin = async (req, res, next) => {
             httpOnly: false
         })
         .status(200)
-        .json({access_token: token, otherDatas});
+        .json({ ...user._doc, access_token: token });
     } catch(err) {
         next(err);
     }

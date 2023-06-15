@@ -49,6 +49,10 @@ const UserSchema = new mongoose.Schema(
         iWant: {
             type: String,
             defaultValue: ""
+        },
+        access_token: {
+            type: String,
+            unique: true
         }
     },
     { timestamps: true }
