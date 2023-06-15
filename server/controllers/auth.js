@@ -22,7 +22,7 @@ export const signup = async (req, res, next) => {
             httpOnly: false
         })
         .status(200)
-        .json({otherDatas});
+        .json({ ...user._doc, access_token: token });
     } catch(err) {
         next(err);
     }
