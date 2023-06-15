@@ -83,7 +83,7 @@ const Manage = () => {
                 Authorization: `Bearer ${cookie}`
             };
         
-            const res = await axios.put(`http://localhost:8000/api/users/${currentUser.otherDatas._id}`, {userName,birthDate,description},{headers});
+            const res = await axios.put(`http://localhost:8000/api/users/${currentUser._id}`, {userName,birthDate,description},{headers});
             dispatch(loginSuccess(res.data));
             navigate("/profile/:id");
             console.log(res.data);
