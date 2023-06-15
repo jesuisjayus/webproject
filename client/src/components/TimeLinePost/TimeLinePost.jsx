@@ -15,7 +15,6 @@ const TimeLinePost = () => {
                 const timeLinePost = await axios.get(`http://localhost:8000/api/posts/timeline`);
                 setTimeLine(timeLinePost.data);
                 console.log(timeLinePost.data);
-                console.log(categories[0].value);
             }
             catch (error) {
                 console.log(error);
