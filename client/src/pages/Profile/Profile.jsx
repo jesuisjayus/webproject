@@ -1,11 +1,14 @@
-import React, {useState, useEffect} from "react";
+
 import Leftbar from "../../components/ProfileLeftbar/ProfileLeftbar"; 
 import Navbar from "../../components/Navbar/Navbar";
 import { useSelector } from 'react-redux';
 import TimeLinePostProfile from "../../components/TimeLinePostProfile/TimeLinePostProfile";
 import axios from 'axios';
-
+import { ThemeContext } from "../../App";
+import React, { useState, useContext, useEffect } from "react";
 const Profile = () => {
+
+    const theme = useContext(ThemeContext);
 
     const {currentUser} = useSelector((state) => state.user);
     const [TimeLineBis, setTimeLineBis] = useState(null);
@@ -38,20 +41,20 @@ const Profile = () => {
                             <h2 className="text-3xl text-text font-bold text-center rounded">
                                 Your Profile
                             </h2> 
-                        <div className="bg-blue-100 text-xl px-4 py-2 rounded-full">
+                        <div className={`bg-blue-100 text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}>
                             <h1><b>User Name : </b> {currentUser.otherDatas.userName}</h1>
                         </div>
-                        <div className="bg-blue-100 text-xl px-4 py-2 rounded-full">
+                        <div className={`bg-blue-100 text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}>
                             <h1><b>Last Name : </b> {currentUser.otherDatas.firstName}</h1>
                             <h1><b>First Name : </b> {currentUser.otherDatas.lastName}</h1>
                         </div>
-                        <div className="bg-blue-100 text-xl px-4 py-2 rounded-full">
+                        <div className={`bg-blue-100 text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}>
                             <h1><b>Email : </b> {currentUser.otherDatas.email}</h1>
                         </div>
-                        <div className="bg-blue-100 text-xl px-4 py-2 rounded-full">
+                        <div className={`bg-blue-100 text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}>
                             <h1><b>Birth Date : </b> {currentUser.otherDatas.birthDate}</h1>
                         </div>
-                        <div className="bg-blue-100 text-xl px-4 py-2 rounded-lg text-justify">
+                        <div className={`bg-blue-100 text-xl px-4 py-2 rounded-lg text-justify ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}>
                             <h1><b>Description : </b> {currentUser.otherDatas.description}</h1>
                         </div>
                     </form>
