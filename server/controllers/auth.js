@@ -16,10 +16,10 @@ export const signup = async (req, res, next) => {
         const {password, ...otherDatas} = newUser._doc;
 
         res.cookie('access_token', token, {
-            httpOnly: true
+            httpOnly: false
         })
         .status(200)
-        .json(otherDatas);
+        .json({access_token: token, otherDatas});
     } catch(err) {
         next(err);
     }
@@ -41,10 +41,10 @@ export const signin = async (req, res, next) => {
         const {password,...otherDatas} = user._doc;
 
         res.cookie('access_token', token, {
-            httpOnly: true
+            httpOnly: false
         })
         .status(200)
-        .json(otherDatas);
+        .json({access_token: token, otherDatas});
     } catch(err) {
         next(err);
     }

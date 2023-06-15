@@ -22,6 +22,9 @@ const SignIn = () => {
             console.log("test");
             const res = await axios.post("http://localhost:8000/api/auth/signup/", {firstName, lastName, userName, email, password});
             console.log(res.data);
+            // Stocker le cookie côté client
+            document.cookie = res.data.access_token;
+            console.log(document.cookie);           
             dispatch(loginSuccess(res.data));
             navigate("/home")
         } catch (error) {
@@ -34,6 +37,11 @@ const SignIn = () => {
         dispatch(loginStart());
         try{
             const res = await axios.post("http://localhost:8000/api/auth/signin/", {userName, password});
+            // Stocker le cookie côté client
+            const accessToken = res.data.access_token;
+            document.cookie = `access_token=${accessToken}`;
+            console.log("accessToken : ",accessToken)
+            console.log("cookie : ",document.cookie);   
             dispatch(loginSuccess(res.data));
             navigate("/home");
             console.log("res", res.data);

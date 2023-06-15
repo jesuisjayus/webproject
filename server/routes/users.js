@@ -4,7 +4,7 @@ import { verifyToken } from '../verifyToken.js';
 
 const router = express.Router();
 
-router.put('/:id', verifyToken, update)
+router.put('/:id', update, verifyToken)
 router.get('/find/:id', getUser);
 router.delete('/:id', verifyToken, deleteUser);
 router.put('/follow/:id', verifyToken, follow);

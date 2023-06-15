@@ -14,7 +14,6 @@ import SignIn from "../SignIn/SignIn";
 
 const Manage = () => {
     const {currentUser} = useSelector((state) => state.user);
-    console.log(currentUser);
     const [description, setDescription] = useState("");
     const [characterCount, setCharacterCount] = useState(0);
     const [userName, setUserName] = useState("");
@@ -23,16 +22,9 @@ const Manage = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const [cookieValue, setCookieValue] = useState('');
-
-    axios.get('http://localhost:3000/read-cookie', { withCredentials: true })
-    .then(response => {
-        setCookieValue(response.data);
-    })
-    .catch(error => {
-        console.error(error);
-    });
-
+    const cookie = document.cookie;
+    
+    
     const handleTextareaChange = (event) => {
         const text = event.target.value;
         setCharacterCount(text.length);
@@ -80,9 +72,14 @@ const Manage = () => {
 
     const handleValidate = async(event) => {
         event.preventDefault();
+        console.log("manage cookie : ",cookie);
         dispatch(loginStart());
         try{
-            const res = await axios.put(`http://localhost:8000/api/users/${currentUser._id}`,cookieValue,{userName,birthDate,description})
+            const headers = {
+                Authorization: `Bearer ${cookie}`
+            };
+        
+            const res = await axios.put(`http://localhost:8000/api/users/${currentUser.otherDatas._id}`, {userName,birthDate,description},{headers});
             dispatch(loginSuccess(res.data));
             navigate("/profile/:id");
             console.log(res.data);
@@ -143,3 +140,5 @@ const Manage = () => {
            )}
        </>
 );};
+
+export default Manage;
