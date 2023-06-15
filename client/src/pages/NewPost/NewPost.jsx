@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import Leftbar from "../../components/NewPostLeftbar/NewPostLeftbar";
-import { useState } from 'react';
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import { useNavigate } from "react-router-dom";
@@ -8,6 +7,9 @@ import axios from "axios";
 import { useSelector } from 'react-redux';
 import SocialMedia from "../../components/SocialMedia/SocialMedia";
 import { Select } from "@mui/material";
+import { ThemeContext } from "../../App";
+import '../../App.css';
+
 const NewPost = () => {
     const {currentUser} = useSelector((state) => state.user);
     const [characterCount, setCharacterCount] = useState(0);  // for short description
@@ -17,7 +19,7 @@ const NewPost = () => {
     const [title, setTitle] = useState("");
     const [category, setCategory] = useState("");
     const navigate = useNavigate();
-
+    const theme = useContext(ThemeContext);
     const handleTextareaChange_short = (event) => {
         const text = event.target.value;
         setCharacterCount(text.length);
@@ -55,7 +57,7 @@ const NewPost = () => {
                 <Navbar />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-4">
-                <div className="px-6">
+            <div className={`p-6 ${theme}`}>
                 <Leftbar />
                 </div>
                 <div className="col-span-3 border-t-slate-800">
@@ -63,18 +65,20 @@ const NewPost = () => {
                         <h2 className="text-3xl text-text font-bold text-center">
                             New Post
                         </h2>
-                        <input type="text" placeholder="Title" className="bg-blue-100 text-xl px-4 py-2 rounded-full" onChange={(e) => setTitle(e.target.value)}/>
+                        <input type="text" placeholder="Title" className={`bg-blue-100 text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`} 
+                        onChange={(e) => setTitle(e.target.value)}/>
                         <div>
-                            <select className="bg-blue-100 px-4 py-2 rounded-full" onChange={(e) => setCategory(e.target.value)}>
-                            <option value="">Category</option>
-                            <option value="music">Music</option>
+                            <select className={`bg-blue-100 px-4 py-2 rounded-full ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}
+                            onChange={(e) => setCategory(e.target.value)}>
+                            <option value="">Choix de la catégorie</option>
+                            <option value="music">Musique</option>
                             <option value="art">Art</option>
-                            <option value="homework">Homework</option>
+                            <option value="moncul">MonCul</option>
                         </select>                       
                         </div>
-                        <textarea maxlength={280} title="max 280 characters" placeholder="Write a short description..." className="bg-blue-100 rounded-lg py-2 px-2" onChange={handleTextareaChange_short}></textarea>
+                        <textarea maxlength={280} title="max 280 characters" placeholder="Write a short description..." className={`bg-blue-100 rounded-lg py-2 px-2 ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`} onChange={handleTextareaChange_short}></textarea>
                         <p className="text-text">Number of characters : {characterCount}/280</p>
-                        <textarea maxlength={1000} title="max 1000 characters" placeholder="Write the full description..." className="bg-blue-100 rounded-lg py-2 px-2" onChange={handleTextareaChange_description}></textarea>
+                    <textarea maxlength={1000} title="max 1000 characters" placeholder="Write the full description..." className={`bg-blue-100 rounded-lg py-2 px-2 ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`} onChange={handleTextareaChange_description}></textarea>
                         <p className="text-text">Number of characters : {characterCount2}/1000</p>
                             <div className="flex justify-center">
                             <button class="bg-button resize-none px-4 py-2 text-white rounded-full hover:bg-button-hover" style={{display: "flex", justifyContent:"center", alignItems:"flex-end", width:"60%"}} onClick={handlePublish}>

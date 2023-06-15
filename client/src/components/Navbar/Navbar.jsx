@@ -1,12 +1,15 @@
-import React, {useState} from "react";
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {logout}  from "../../redux/userSlice";
-
+import React, { useState, useContext } from "react";
 import LoginIcon from '@mui/icons-material/Login';
 import LogoutIcon from '@mui/icons-material/Logout';
+import { ThemeContext } from "../../App";
+import '../../App.css';
+
 const Navbar = () =>{
+  const theme = useContext(ThemeContext);
   const dispatch = useDispatch();
   const [isLogoutIcon, setIsLogoutIcon] = useState(false);
 
@@ -36,7 +39,7 @@ const Navbar = () =>{
       </div>
       <div className="col-span-3 px-0 md:px-6 mx-auto" style={{ position: 'relative' }}>
         <SearchIcon className="absolute m-2" />
-        <input type="text" className="bg-blue-100 rounded-full py-2 px-8" style={{ width: '180%', left: '2rem' }} placeholder="Search..." />
+        <input type="text" className={`bg-blue-100 rounded-full py-2 px-8 ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`} style={{ width: '180%', left: '2rem' }} placeholder="Search..." />
       </div>
       <div className="col-span-5 md:my-0 px-6 mx-auto flex-end">
         <div>
