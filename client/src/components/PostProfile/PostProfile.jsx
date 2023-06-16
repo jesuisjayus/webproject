@@ -40,11 +40,11 @@ const Post = ({post, setData}) => {
                     <h1 className="text-3xl text-text font-bold text-left">
                         {post.title}
                     </h1>
-                    <button className="bg-button px-2 py-1 text-white rounded-full float-right hover:bg-button-hover" onClick={handleDelete}>
+                    <button className="bg-button text-1xl text-center ml-auto rounded-lg px-2 text-white float-right hover:bg-button-hover" onClick={handleDelete}>
                         Delete
                     </button>
                 </div>
-                <p className="text-1xl text-text text-center bg-blue-100 px-4 py-1 w-3/12 rounded-full">
+                <p className="text-1xl text-center bg-blue-100 px-4 rounded-full mr-auto">
                     {post.category}
                 </p>   
                 <p className="text-2xl text-center text-left">
