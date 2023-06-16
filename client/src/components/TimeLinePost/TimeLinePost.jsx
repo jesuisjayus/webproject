@@ -37,7 +37,7 @@ const TimeLinePost = () => {
           </div>
           {timeLine &&
             timeLine.map((post) => {
-              if(post.category === category || category ==="") {
+              if(post.category === category || category === "" || category==="Choose a category") {
                 return (
                   <div key={post._id} className="p-5">
                       <Post post = {post} setData={setTimeLine} />
