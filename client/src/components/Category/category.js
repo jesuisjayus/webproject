@@ -1,3 +1,3 @@
-export var categories = [{value:"art",label:"Art"}, {value:"music",label:"Music"}, {value:"homework",label:"Homework"},
-    {value:"desingle",label:"Design"}
+export var categories = [{value:"Art",label:"Art"}, {value:"Music",label:"Music"}, {value:"Homework",label:"Homework"},
+    {value:"Design",label:"Design"}
 ];
