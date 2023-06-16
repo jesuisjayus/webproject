@@ -28,6 +28,12 @@ const Profile = () => {
         fetchData();
     }, [currentUser._id]);
 
+    let gradientColors1;
+    if (theme === "light") {
+      gradientColors1 = "from-form-pink via-form-purple to-form-blue";
+    } else {
+      gradientColors1 = "from-form-pink-dark via-form-purple-dark to-form-blue-dark";
+    }
     return (
         <>
             {!currentUser ? (
@@ -42,7 +48,7 @@ const Profile = () => {
                     <Leftbar />
                 </div>
                 <div className="col-span-3 border-t-slate-800 px-6 mt-8">
-                    <form className="mdmd:shrink-0 bg-gradient-to-bl from-form-pink via-form-purple to-form-blue flex flex-col px-8 py-12 rounded-lg w-8/12 mx-0 gap-5">
+                    <form className={`mdmd:shrink-0 bg-gradient-to-bl ${gradientColors1} from-form-pink via-form-purple to-form-blue flex flex-col px-8 py-12 rounded-lg w-8/12 mx-0 gap-5  ${theme} `}>
                             <h2 className="text-3xl text-text font-bold text-center rounded">
                                 Your Profile
                             </h2> 

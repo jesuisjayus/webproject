@@ -9,19 +9,29 @@ import NewPost from './pages/NewPost/NewPost';
 import PostDetail from './pages/PostDetail/PostDetail';
 import AboutUs from './pages/AboutUs/AboutUs';
 import Chat from './pages/Chat/Chat';
-import { createContext, useState, useEffect } from 'react';
+import { createContext, useState, useEffect,useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 export const ThemeContext=createContext(null);
 
 
 const Layout = () => {
-  return(
-    <div className="md:w-8/12 mx-auto">
+  const theme = useContext(ThemeContext);
+
+  const formStyles = {
+    background: theme === 'light' ? '#ffffff' : '#000000',
+    color: theme === 'light' ? '#000000' : '#ffffff',
+  };
+
+  if (theme === 'dark') {
+    formStyles['filter'] = 'saturate(50%) brightness(70%)';
+  }
+
+  return (
+    <div className="md:w-8/12 mx-auto" >
       <Outlet></Outlet>
     </div>
   );
-
 };
 
 const router = createBrowserRouter([
@@ -35,7 +45,7 @@ const router = createBrowserRouter([
         element: <SignIn />,
       },
       {
-        path: "/profile",
+        path: "/profile/:id",
         element: <Profile />,
       },
       {
@@ -87,29 +97,32 @@ function App() {
           };
       
         }
+        
   
 
         const formStyles = {
 
           background: theme === 'light' ? '#ffffff' : '#000000',
           color: theme === 'light' ? '#000000' : '#ffffff',
+          filter: theme === "dark" ? "saturate(50%) brightness(70%)" : "none",
 
         };
-        if (theme === 'dark') {
-          formStyles['filter'] = 'saturate(50%) brightness(70%)';
-        }
+
 
   return (
 
       <div className={`App ${theme}`}>
         
-                <button className="theme-toggle" onClick={ToggleTheme}>
+      <button className="theme-toggle" onClick={ToggleTheme}>
         <FontAwesomeIcon
           icon={theme === 'light' ? faSun : faMoon}
           size="2x"
+          formStyles={formStyles}
         />
       </button>
-      <RouterProvider router={router} formStyles={formStyles} ></RouterProvider>
+      <ThemeContext.Provider value={theme}> 
+        <RouterProvider router={router} formStyles={formStyles}></RouterProvider>
+      </ThemeContext.Provider>
     </div>
  
   );

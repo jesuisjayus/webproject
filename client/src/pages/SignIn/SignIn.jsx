@@ -39,6 +39,21 @@ const SignIn = () => {
         }
     };
 
+    let gradientColors1;
+    if (theme === "light") {
+      gradientColors1 = "from-form-pink to-form-purple";
+    } else {
+      gradientColors1 = "from-form-pink-dark to-form-purple-dark";
+    }
+
+    let gradientColors2;
+    if (theme === "light") {
+      gradientColors2 = "from-form-purple to-form-blue";
+    } else {
+      gradientColors2 = "from-form-purple-dark to-form-blue-dark";
+    }
+
+    console.log('Current theme:', theme);
     const handleLogin = async(e) => {
         e.preventDefault();
         dispatch(loginStart());
@@ -67,7 +82,7 @@ const SignIn = () => {
                 <img src="/logo.png" alt="skillshare" width="150px"/>
                 <img src="/nom.png" alt="skillshare" width="150px"/>
             </div>
-            <form className={`bg-gradient-to-b from-form-pink to-form-purple flex flex-col px-8 py-12 rounded-lg w-6/12 mx-auto gap-8 my-5 ${theme}`}>
+            <form className={`bg-gradient-to-b ${gradientColors1} from-form-pink to-form-purple flex flex-col px-8 py-12 rounded-lg w-6/12 mx-auto gap-8 my-5 ${theme}` }>
                 <h2 className="text-3xl text-text font-bold text-center">
                     Sign in to your account
                 </h2>
@@ -84,7 +99,7 @@ const SignIn = () => {
                     className={`text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}/>
                 <button className="bg-button text-white text-xl px-4 py-2 rounded-full hover:bg-button-hover" onClick={handleLogin}>Sign In</button>
             </form>
-            <form className="bg-gradient-to-b from-form-purple to-form-blue flex flex-col px-8 py-12 rounded-lg w-6/12 mx-auto gap-8 my-5">
+            <form className={`bg-gradient-to-b  ${gradientColors2} from-form-purple to-form-blue flex flex-col px-8 py-12 rounded-lg w-6/12 mx-auto gap-8 my-5 ${theme}`}>
                 <p className="mx-auto text-text">Don't have any account?</p>
                 <h2 className="text-3xl text-text font-bold text-center">
                     Create an account

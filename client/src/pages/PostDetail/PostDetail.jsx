@@ -1,17 +1,18 @@
 import SignIn from "../SignIn/SignIn";
 import React from "react";
 import Leftbar from "../../components/NewPostLeftbar/NewPostLeftbar";
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { Link, useLocation } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import axios from 'axios';
 import {useSelector } from "react-redux";
-
+import { ThemeContext } from "../../App";
+import '../../App.css';
 const PostDetail = () => {
     let {state}= useLocation(); 
     const [userData, setUserData] = useState();
     const {currentUser} = useSelector((state) => state.user);
-
+    const theme=ThemeContext(useContext);
     useEffect(() => {
             const fetchData = async () => {
                 try{
@@ -27,6 +28,12 @@ const PostDetail = () => {
         fetchData();
     },[state.userId]);
 
+    let gradientColors1;
+    if (theme === "light") {
+      gradientColors1 = "from-form-pink via-form-purple to-form-blue";
+    } else {
+      gradientColors1 = "from-form-pink-dark via-form-purple-dark to-form-blue-dark";
+    }
     return (
         <>
             {!currentUser ? (
@@ -43,7 +50,7 @@ const PostDetail = () => {
                         <Leftbar />
                     </div>
                     <div className="col-span-3 border-t-slate-800 px-6">
-                        <form className="bg-gradient-to-b from-form-pink to-form-purple flex flex-col px-8 py-12 rounded-lg w-8/12 mx-0 gap-5">
+                        <form className={`bg-gradient-to-b ${gradientColors1} from-form-pink to-form-purple flex flex-col px-8 py-12 rounded-lg w-8/12 mx-0 gap-5${theme}`}>
                                 <h2 className="text-3xl text-text font-bold text-center rounded">
                                     Post Details
                                 </h2> 
