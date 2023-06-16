@@ -44,7 +44,7 @@ const Profile = () => {
                         <div className={`bg-blue-100 text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}>
                             <h1><b>User Name : </b> {currentUser.userName}</h1>
                         </div>
-                        <div className={`bg-blue-100 text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}>
+                        <div className={`bg-blue-100 text-xl px-4 py-2 rounded-lg ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}>
                             <h1><b>Last Name : </b> {currentUser.firstName}</h1>
                             <h1><b>First Name : </b> {currentUser.lastName}</h1>
                         </div>

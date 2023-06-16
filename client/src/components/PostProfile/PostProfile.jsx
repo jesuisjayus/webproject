@@ -5,12 +5,14 @@ import axios from 'axios';
 
 const Post = ({post, setData}) => {
     const [userData, setUserData] = useState();
-
+    const [userId, setUserId] = useState("");
+    const cookie = document.cookie;
     useEffect(() => {
             const fetchData = async () => {
                 try{
                     const findUser = await axios.get(`http://localhost:8000/api/users/find/${post.userId}`);
                     console.log(findUser.data);
+                    setUserId(post.userId.toString());
                     setUserData(findUser.data);
                 } catch (error) {
                     console.log(error);
@@ -23,16 +25,20 @@ const Post = ({post, setData}) => {
     },[post.userId]);
     const handleDelete = async(e) => {
         e.preventDefault();
-        alert('Delete');
+        
         try{
-            const res = await axios.delete("http://localhost:8000/api/posts/", {userId : post.userId});
+            const headers = {
+                Authorization: `Bearer ${cookie}`
+            };
+            console.log("profile",userId);
+            const res = await axios.delete(`http://localhost:8000/api/posts/delete/${post._id}`, {body : userId}, {headers});
         } catch(err){
             console.log(err);
         }
     };
 
     return (
-        <div>
+        <div className='mt-4'>
         {userData && ( 
             <>
             <form className="bg-gradient-to-bl from-form-pink via-form-purple to-form-blue flex flex-col px-8 py-4 rounded-lg mx-auto gap-3">
