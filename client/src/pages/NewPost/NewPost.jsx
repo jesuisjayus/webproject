@@ -42,7 +42,6 @@ const NewPost = () => {
             const headers = {
                 Authorization: `Bearer ${cookie}`
             };                
-            alert("Publishing");
             const res = await axios.post("http://localhost:8000/api/posts/", 
             {
                 userId: currentUser._id,
@@ -54,6 +53,7 @@ const NewPost = () => {
             navigate("/home");
 
         } catch(err){
+            alert("Could not publish");
             console.log(err);
         }
     };

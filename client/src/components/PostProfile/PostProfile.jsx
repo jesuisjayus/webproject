@@ -26,12 +26,12 @@ const Post = ({post, setData}) => {
     const handleDelete = async(e) => {
         e.preventDefault();
         try{
-            alert("Delete");
             const headers = {
                 Authorization: `Bearer ${cookie}`
             };
             console.log("profile",userId);
             const res = await axios.delete(`http://localhost:8000/api/posts/delete/${post._id}`, {data:{userId: userId}}, {headers});
+            window.location.reload(false);
         } catch(err){
             console.log(err);
         }
