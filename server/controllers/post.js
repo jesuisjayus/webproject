@@ -15,7 +15,10 @@ export const createPost = async (req, res, next) => {
 
 export const deletePost = async (req, res, next) => {
     try {
+        console.log(req.body);
         const post = await Post.findById(req.params.id);
+        console.log(post.userId);
+        console.log(req.body.userId);
         if(post.userId === req.body.userId){
             await post.deleteOne();
             res.status(200).json("Post deleted successfully");
