@@ -28,7 +28,8 @@ const SignIn = () => {
             const res = await axios.post("http://localhost:8000/api/auth/signup/", {firstName, lastName, userName, email, password});
             console.log(res.data);
             // Stocker le cookie côté client
-            document.cookie = res.data.access_token;
+            const accessToken = res.data.access_token;
+            document.cookie = `access_token=${accessToken}`;
             console.log(document.cookie);           
             dispatch(loginSuccess(res.data));
             navigate("/home")

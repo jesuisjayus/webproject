@@ -9,6 +9,7 @@ import SocialMedia from "../../components/SocialMedia/SocialMedia";
 import { Select } from "@mui/material";
 import { ThemeContext } from "../../App";
 import '../../App.css';
+import { categories } from "../../components/Category/category";
 
 const NewPost = () => {
     const {currentUser} = useSelector((state) => state.user);
@@ -34,7 +35,6 @@ const NewPost = () => {
 
     const handlePublish = async(e) => {
         e.preventDefault();
-        alert(category);
         try{
             const res = await axios.post("http://localhost:8000/api/posts/", 
             {
@@ -70,10 +70,12 @@ const NewPost = () => {
                         <div>
                             <select className={`bg-blue-100 px-4 py-2 rounded-full ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}
                             onChange={(e) => setCategory(e.target.value)}>
-                            <option value="">Choix de la catégorie</option>
-                            <option value="music">Musique</option>
-                            <option value="art">Art</option>
-                            <option value="moncul">MonCul</option>
+                            {categories && categories.map((category) => {
+                                return (
+                                <option key={category.value}>{category.label}</option> 
+                                )
+                            })
+                            }
                         </select>                       
                         </div>
                         <textarea maxlength={280} title="max 280 characters" placeholder="Write a short description..." className={`bg-blue-100 rounded-lg py-2 px-2 ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`} onChange={handleTextareaChange_short}></textarea>
