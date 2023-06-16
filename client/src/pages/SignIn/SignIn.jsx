@@ -34,6 +34,7 @@ const SignIn = () => {
             dispatch(loginSuccess(res.data));
             navigate("/home")
         } catch (error) {
+            alert("Compte non créé, oups")
             dispatch(loginFailed());
         }
     };

@@ -21,6 +21,9 @@ const NewPost = () => {
     const [category, setCategory] = useState("");
     const navigate = useNavigate();
     const theme = useContext(ThemeContext);
+    const cookie = document.cookie;
+
+
     const handleTextareaChange_short = (event) => {
         const text = event.target.value;
         setCharacterCount(text.length);
@@ -36,6 +39,10 @@ const NewPost = () => {
     const handlePublish = async(e) => {
         e.preventDefault();
         try{
+            const headers = {
+                Authorization: `Bearer ${cookie}`
+            };                
+            alert("Publishing");
             const res = await axios.post("http://localhost:8000/api/posts/", 
             {
                 userId: currentUser._id,
@@ -43,7 +50,7 @@ const NewPost = () => {
                 text: shortDescription,
                 description: longDescription,
                 category: category,
-            });
+            }, { headers });
             navigate("/home");
 
         } catch(err){

@@ -24,7 +24,9 @@ const Post = ({post, setData}) => {
         fetchData();
     },[post.userId]);
     const handleDelete = async(e) => {
+        e.preventDefault();
         try{
+            alert("Delete");
             const headers = {
                 Authorization: `Bearer ${cookie}`
             };
