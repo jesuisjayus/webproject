@@ -14,7 +14,10 @@ export const getUser = async (req, res, next) => {
 
 export const update = async (req, res, next) => {
     const user = await User.findById(req.params.id);
-    if(req.params.id === user._id) {
+    console.log("req :",req.params.id);
+    console.log("user :",user._id.toString());
+    console.log(req.params.id === user._id.toString());
+    if(req.params.id === user._id.toString()) {
         try{
             const updatedUser = await User.findByIdAndUpdate(req.params.id, {
                 $set: req.body
@@ -27,6 +30,7 @@ export const update = async (req, res, next) => {
             next(err);
         }
     } else {
+        console.log("coucou3");
         return next(handleError(403, "You can only update your own account"));
     }
 };

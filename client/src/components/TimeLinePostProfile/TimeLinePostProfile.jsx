@@ -20,13 +20,13 @@ const TimeLinePostProfile = () => {
             }
         };
         fetchData();
-    }, [currentUser.otherDatas._id]);
+    }, [currentUser._id]);
     
     return (
         <div className="mt-2">
           {timeLine &&
             timeLine.map((post) => {
-              if(post.userId === currentUser.otherDatas._id){
+              if(post.userId === currentUser._id){
                 return (
                   <div key={post._id}>
                       <PostProfile post = {post} setData={setTimeLine} />

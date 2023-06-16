@@ -4,7 +4,7 @@ import { createPost, deletePost, getPost, getTimeline, getAllPosts} from "../con
 
 const router = express.Router();
 
-router.post('/', verifyToken, createPost);
+router.post('/', createPost, verifyToken);
 router.delete('/delete/:id', verifyToken, deletePost);
 router.get('/timeline', getTimeline);
 router.get('/user/all/:id', getAllPosts);

@@ -71,33 +71,33 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  const [theme, setTheme]=useState("light")
-  useEffect(() => {
-    document.body.className = theme;
-  }, [theme]);
-  const ToggleTheme=()=>{
-    
-    if (theme==='light')
-    {
-      setTheme('dark');
+      const [theme, setTheme]=useState("light")
+        useEffect(() => {
+          document.body.className = theme;
+        }, [theme]);
+        const ToggleTheme=()=>{
+        
+           if (theme==='light')
+          {
+             setTheme('dark');
 
-    }
-    else{
-      setTheme('light');
-    };
-   
-  }
+          }
+          else{
+             setTheme('light');
+          };
+      
+        }
   
 
-  const formStyles = {
+        const formStyles = {
 
-    background: theme === 'light' ? '#ffffff' : '#000000',
-    color: theme === 'light' ? '#000000' : '#ffffff',
+          background: theme === 'light' ? '#ffffff' : '#000000',
+          color: theme === 'light' ? '#000000' : '#ffffff',
 
-  };
-  if (theme === 'dark') {
-    formStyles['filter'] = 'saturate(50%) brightness(70%)';
-  }
+        };
+        if (theme === 'dark') {
+          formStyles['filter'] = 'saturate(50%) brightness(70%)';
+        }
 
   return (
 

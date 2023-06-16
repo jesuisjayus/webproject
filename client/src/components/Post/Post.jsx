@@ -25,7 +25,7 @@ const Post = ({post, setData}) => {
     },[post.userId]);
 
     return (
-        <div>
+        <div class="md:shrink-0">
         {userData && ( 
             <>
             <form className="bg-gradient-to-bl from-form-pink via-form-purple to-form-blue flex flex-col px-8 py-4 rounded-lg mx-auto gap-3">
@@ -39,14 +39,14 @@ const Post = ({post, setData}) => {
                         </div>
                     </Link>
                 </div>
-                <p className="text-1xl text-text text-center bg-blue-100 px-4 py-1 w-2/12 rounded-full">
+                <p className="text-1xl text-center bg-blue-100 px-4 rounded-full mr-auto">
                     {post.category}
                 </p>
                 
                 <p className="text-2xl text-center text-left">
                     {post.text}
                 </p>            
-                <p className="text-1xl text-center bg-blue-100 px-4 py-1 w-2/12 rounded-full ml-auto">
+                <p className="text-1xl text-center bg-blue-100 px-4 rounded-full ml-auto">
                     {userData.userName}
                 </p>
             </form>
