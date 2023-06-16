@@ -13,7 +13,10 @@ module.exports = {
         'text': '#0F1C37',
         'form-blue': '#12c2e9',
         'form-pink': '#f64f59',
-        'form-purple': '#c471ed'
+        'form-purple': '#c471ed',
+        'form-pink-dark': '#ec38bc',
+        'form-purple-dark': '#7303c0',
+        'form-blue-dark': '#03001e'
       }
     },
   },
