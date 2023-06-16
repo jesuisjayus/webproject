@@ -1,3 +1,4 @@
+import SignIn from "../SignIn/SignIn";
 import React, { useState, useContext } from "react";
 import Leftbar from "../../components/NewPostLeftbar/NewPostLeftbar";
 import { Link } from "react-router-dom";
@@ -59,6 +60,10 @@ const NewPost = () => {
     };
 
     return (
+        <>
+            {!currentUser ? (
+                <SignIn/>
+            ) : (
         <div>
             <div>
                 <Navbar />
@@ -103,7 +108,9 @@ const NewPost = () => {
                     </a>
             </div>
 
-            </div>
+        </div>
+            )}
+        </>
          
         );
 };

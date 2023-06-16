@@ -1,4 +1,5 @@
 
+import SignIn from "../SignIn/SignIn";
 import Leftbar from "../../components/ProfileLeftbar/ProfileLeftbar"; 
 import Navbar from "../../components/Navbar/Navbar";
 import { useSelector } from 'react-redux';
@@ -28,6 +29,10 @@ const Profile = () => {
     }, [currentUser._id]);
 
     return (
+        <>
+            {!currentUser ? (
+                <SignIn/>
+            ) : (
         <div>
             <div>
                 <Navbar />
@@ -65,5 +70,7 @@ const Profile = () => {
                 </div>
             </div>
         </div>
+            )}
+        </>
 );};
 export default Profile;

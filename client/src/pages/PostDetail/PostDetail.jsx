@@ -1,13 +1,16 @@
+import SignIn from "../SignIn/SignIn";
 import React from "react";
 import Leftbar from "../../components/NewPostLeftbar/NewPostLeftbar";
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import axios from 'axios';
+import {useSelector } from "react-redux";
 
 const PostDetail = () => {
     let {state}= useLocation(); 
     const [userData, setUserData] = useState();
+    const {currentUser} = useSelector((state) => state.user);
 
     useEffect(() => {
             const fetchData = async () => {
@@ -25,6 +28,10 @@ const PostDetail = () => {
     },[state.userId]);
 
     return (
+        <>
+            {!currentUser ? (
+                <SignIn/>
+            ) : (
         <div>
             {userData && ( 
             <>
@@ -71,6 +78,8 @@ const PostDetail = () => {
                 </div>
             </>)}
         </div>
+            )}
+        </>
     );
 };
 
