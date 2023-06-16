@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import DoneIcon from "@mui/icons-material/Done";
 import CloseIcon from "@mui/icons-material/Close";
 
@@ -93,7 +93,7 @@ const Manage = () => {
         
             const res = await axios.put(`http://localhost:8000/api/users/${currentUser._id}`, {userName,birthDate,description},{headers});
             dispatch(loginSuccess(res.data));
-            navigate("/profile/:id");
+            navigate("/profile");
             console.log(res.data);
         }catch(err){
             alert('Somethong went wrong');
@@ -104,7 +104,7 @@ const Manage = () => {
 
     const handleCancel = (event) => {
         event.preventDefault();
-        navigate("/profile/:id");
+        navigate("/profile");
     }
 
     return (

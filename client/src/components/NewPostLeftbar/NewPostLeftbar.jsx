@@ -11,7 +11,7 @@ const Leftbar = () => {
                 <Link to="/home">
                     <div className="flex items-center space-x-6 px-2 py-2 hover:bg-slate-200 rounded-full cursor-pointer">
                         <HomeIcon fontSize="large" />
-                        <h1>Home</h1>
+                        <p>Home</p>
                     </div>
                 </Link>
             </div>
