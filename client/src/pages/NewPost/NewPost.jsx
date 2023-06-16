@@ -35,7 +35,6 @@ const NewPost = () => {
 
     const handlePublish = async(e) => {
         e.preventDefault();
-        alert(category);
         try{
             const res = await axios.post("http://localhost:8000/api/posts/", 
             {
