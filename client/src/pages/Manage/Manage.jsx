@@ -28,12 +28,21 @@ const Manage = () => {
 
     const cookie = document.cookie;
     
+    const handleUserName = (e)=>{
+        const name = e.target.value;
+        console.log(name.length);
+        if (name !== null && name.trim() !== ''){
+            setUserName(name);
+        }
+    };
     
     const handleTextareaChange = (event) => {
         const text = event.target.value;
         setCharacterCount(text.length);
-        setDescription(text);
-        console.log(text);
+        if (text.length !== 0) {
+            setDescription(text);
+            console.log(text);
+        }
         
     };
 
@@ -113,7 +122,7 @@ const Manage = () => {
                             <div className="px-6">
                                 <Leftbar />
                             </div>
-                            <div className="col-span-3 border-t-slate-800">
+                            <div className="col-span-3 border-t-slate-800 px-6 mt-8 mb-8">
                             <form className="bg-gradient-to-bl from-form-pink via-form-purple to-form-blue flex flex-col px-8 py-12 rounded-lg w-8/12 mx-0 gap-10">
                                 <h2 className="text-3xl text-text font-bold text-center">
                                     Manage Profile
@@ -122,7 +131,7 @@ const Manage = () => {
                                     <img src={selectedImage} alt="" style={imageStyle} />
                                 </div>
                                     <input type="file" accept=".jpeg, .jpg, .png" onChange={handleImageChange}/>
-                                    <input type="text" placeholder="Username" className={`bg-blue-100 rounded-full py-2 px-2 ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`} onChange={(e) => setUserName(e.target.value)}/>
+                                    <input type="text" placeholder="Username" className={`bg-blue-100 rounded-full py-2 px-2 ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`} onChange={handleUserName}/>
                                     <input type="text" placeholder="Birth Date (DD/MM/YYYY)" pattern="\d{2}/\d{2}/\d{4}" title="Format DD/MM/YYYY" className={`bg-blue-100 rounded-full py-2 px-2 ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`} onChange={handleBirthDate} required/>
                                     <textarea maxlength={500} title="max 500 characters" placeholder="Write a little description..." className={`bg-blue-100 rounded-lg py-2 px-2 ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`} onChange={handleTextareaChange}></textarea>
                                     <p>number of characters : {characterCount}/500</p>
