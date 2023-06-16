@@ -32,29 +32,29 @@ const Profile = () => {
             <div>
                 <Navbar />
             </div>
-            <div className="grid grid-cols-4">
+            <div className="grid grid-cols-1 md:grid-cols-4">
                 <div className="px-6">
                     <Leftbar />
                 </div>
-                <div className="col-span-3 border-t-slate-800 content-normal">
-                    <form className="bg-gradient-to-bl from-form-pink via-form-purple to-form-blue flex flex-col px-8 py-12 rounded-lg w-8/12 mx-0 gap-5">
+                <div className="col-span-3 border-t-slate-800 px-6">
+                    <form className="mdmd:shrink-0 bg-gradient-to-bl from-form-pink via-form-purple to-form-blue flex flex-col px-8 py-12 rounded-lg w-8/12 mx-0 gap-5">
                             <h2 className="text-3xl text-text font-bold text-center rounded">
                                 Your Profile
                             </h2> 
-                        <div className={`bg-blue-100 text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}>
+                        <div className={`bg-blue-100 text-xl px-4 py-2 rounded-full truncate ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}>
                             <h1><b>User Name : </b> {currentUser.userName}</h1>
                         </div>
-                        <div className={`bg-blue-100 text-xl px-4 py-2 rounded-lg ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}>
+                        <div className={`bg-blue-100 text-xl px-4 py-2 rounded-lg truncate ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}>
                             <h1><b>Last Name : </b> {currentUser.firstName}</h1>
                             <h1><b>First Name : </b> {currentUser.lastName}</h1>
                         </div>
-                        <div className={`bg-blue-100 text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}>
+                        <div className={`bg-blue-100 text-xl px-4 py-2 rounded-full truncate ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}>
                             <h1><b>Email : </b> {currentUser.email}</h1>
                         </div>
-                        <div className={`bg-blue-100 text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}>
+                        <div className={`bg-blue-100 text-xl px-4 py-2 rounded-full truncate${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}>
                             <h1><b>Birth Date : </b> {currentUser.birthDate}</h1>
                         </div>
-                        <div className={`bg-blue-100 text-xl px-4 py-2 rounded-lg text-justify ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}>
+                        <div className={`bg-blue-100 text-xl px-4 py-2 rounded-lg text-justify truncate ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}>
                             <h1><b>Description : </b> {currentUser.description}</h1>
                         </div>
                     </form>
