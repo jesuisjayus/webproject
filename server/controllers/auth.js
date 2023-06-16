@@ -9,12 +9,12 @@ export const signup = async (req, res, next) => {
         const hash = bcrypt.hashSync(req.body.password, salt);
         const newUser = new User({...req.body, password: hash});
 
-        await newUser.save();
-
         const token = jwt.sign({ id: newUser._id }, process.env.JWT);
 
         newUser.set('access_token', token);
         await newUser.save();
+
+        console.log(newUser);
 
         const {password, ...otherDatas} = newUser._doc;
 
