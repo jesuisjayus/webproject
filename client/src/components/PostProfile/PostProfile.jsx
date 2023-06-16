@@ -24,14 +24,12 @@ const Post = ({post, setData}) => {
         fetchData();
     },[post.userId]);
     const handleDelete = async(e) => {
-        e.preventDefault();
-        
         try{
             const headers = {
                 Authorization: `Bearer ${cookie}`
             };
             console.log("profile",userId);
-            const res = await axios.delete(`http://localhost:8000/api/posts/delete/${post._id}`, {body : userId}, {headers});
+            const res = await axios.delete(`http://localhost:8000/api/posts/delete/${post._id}`, {data:{userId: userId}}, {headers});
         } catch(err){
             console.log(err);
         }
