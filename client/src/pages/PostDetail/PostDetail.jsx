@@ -12,7 +12,7 @@ const PostDetail = () => {
     let {state}= useLocation(); 
     const [userData, setUserData] = useState();
     const {currentUser} = useSelector((state) => state.user);
-    const theme=ThemeContext(useContext);
+    const theme=useContext(ThemeContext);
     useEffect(() => {
             const fetchData = async () => {
                 try{
@@ -51,16 +51,16 @@ const PostDetail = () => {
                     </div>
                     <div className="col-span-3 border-t-slate-800 px-6">
                         <form className={`bg-gradient-to-b ${gradientColors1} from-form-pink to-form-purple flex flex-col px-8 py-12 rounded-lg w-8/12 mx-0 gap-5${theme}`}>
-                                <h2 className="text-3xl text-text font-bold text-center rounded">
+                                <h2 className="text-3xl text-text font-bold mb-5 text-center rounded">
                                     Post Details
                                 </h2> 
-                            <div className="bg-blue-100 text-xl px-4 py-2 rounded-full">
+                            <div className="bg-blue-100 text-xl px-4 py-2 mb-5 rounded-full">
                                 <h1><b>Announce : </b> {state.title}</h1>
                             </div>
-                            <div className="bg-blue-100 text-xl px-4 py-2 rounded-full">
+                            <div className="bg-blue-100 text-xl px-4 py-2 mb-5 rounded-full">
                                 <h1><b>Category : </b> {state.category}</h1>
                             </div>
-                            <div className="bg-blue-100 text-xl px-4 py-2 rounded-lg text-justify">
+                            <div className="bg-blue-100 text-xl px-4 py-2 mb-5 rounded-lg text-justify">
                                 <h1><b>Description : </b> {state.description}</h1>
                             </div>
                         </form>
