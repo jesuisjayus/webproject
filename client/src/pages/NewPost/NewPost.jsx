@@ -1,13 +1,11 @@
 import SignIn from "../SignIn/SignIn";
 import React, { useState, useContext } from "react";
 import Leftbar from "../../components/NewPostLeftbar/NewPostLeftbar";
-import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useSelector } from 'react-redux';
 import SocialMedia from "../../components/SocialMedia/SocialMedia";
-import { Select } from "@mui/material";
 import { ThemeContext } from "../../App";
 import '../../App.css';
 import { categories } from "../../components/Category/category";
@@ -43,7 +41,7 @@ const NewPost = () => {
             const headers = {
                 Authorization: `Bearer ${cookie}`
             };                
-            const res = await axios.post("http://localhost:8000/api/posts/", 
+            await axios.post("http://localhost:8000/api/posts/", 
             {
                 userId: currentUser._id,
                 title: title,
@@ -78,8 +76,8 @@ const NewPost = () => {
             <div className={`p-6 ${theme}`}>
                 <Leftbar />
                 </div>
-                <div className="col-span-3 border-t-slate-800">
-                    <form className={`bg-gradient-to-br ${gradientColors1} from-form-pink via-form-purple to-form-blue flex flex-col px-8 py-12 rounded-lg w-8/12 mx-0 gap-6 ${theme}`}>
+                <div className="col-span-3 px-6 mt-8 mb-8">
+                    <form className={`bg-gradient-to-br ${gradientColors1} flex flex-col px-8 py-12 rounded-lg w-8/12 mx-0 gap-6 ${theme}`}>
                         <h2 className="text-3xl text-text font-bold text-center">
                             New Post
                         </h2>
@@ -107,11 +105,11 @@ const NewPost = () => {
                             </div>
                     </form>    
                 </div>
-                    <a>
+                    <p>
                     <span style={{ height:"50px", width: "4rem" }}></span> 
                     <SocialMedia/>
                     <span style={{ height:"50px", width: "4rem" }}></span> 
-                    </a>
+                    </p>
             </div>
 
         </div>

@@ -129,7 +129,7 @@ const Manage = () => {
                                 <Leftbar />
                             </div>
                             <div className="col-span-3 border-t-slate-800 px-6 mt-8 mb-8">
-                            <form className={`bg-gradient-to-bl ${gradientColors1} from-form-pink via-form-purple to-form-blue flex flex-col px-8 py-12 rounded-lg w-8/12 mx-0 gap-10${theme}`}>
+                            <form className={`bg-gradient-to-br ${gradientColors1} from-form-pink via-form-purple to-form-blue flex flex-col px-8 py-12 rounded-lg w-8/12 mx-0 gap-10${theme}`}>
                                 <h2 className="text-3xl text-text font-bold text-center mb-5">
                                     Manage Profile
                                 </h2>

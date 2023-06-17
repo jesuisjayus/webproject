@@ -2,7 +2,7 @@ import SignIn from "../SignIn/SignIn";
 import React from "react";
 import Leftbar from "../../components/NewPostLeftbar/NewPostLeftbar";
 import { useEffect, useState, useContext } from 'react';
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import axios from 'axios';
 import {useSelector } from "react-redux";

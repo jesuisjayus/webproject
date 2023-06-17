@@ -1,4 +1,3 @@
-import SearchIcon from '@mui/icons-material/Search';
 import { Link } from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {logout}  from "../../redux/userSlice";
@@ -12,6 +11,8 @@ const Navbar = () =>{
   const theme = useContext(ThemeContext);
   const dispatch = useDispatch();
   const [isLogoutIcon, setIsLogoutIcon] = useState(false);
+  
+  
 
   const handleLogout = () =>{
       dispatch(logout());
@@ -24,18 +25,30 @@ const Navbar = () =>{
   const handleMouseLeave = () => {
     setIsLogoutIcon(false);
   };
+  let logo;
+    if (theme === "light") {
+      logo = "/logo.png";
+    } else {
+      logo = "/logo-dark.png";
+    }
+  let nom;
+    if (theme === "light") {
+      nom = "/nom.png";
+    } else {
+      nom = "/nom-dark.png";
+    }
 
   return (
       <div>
       <div className="flex justify-between items-center mb-5">
       <div>
         <Link to="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
-        <img src="/logo.png" alt="Logo" width="40px" className="ml-8" />
+        <img src={logo} alt="Logo" width="40px" className="ml-8" />
         </Link>
       </div>
       <div className="col-span-2 flex justify-between items-center ml-4 -mr-20">
           <Link to="/home">
-          <img src="/nom.png" alt="SkillConnect" width="150px"/>
+          <img src={nom} alt="SkillConnect" width="150px"/>
           </Link>
       </div>
       <div className="col-span-5 md:my-0 px-6 mx-auto ml-auto mr-5 flex-end">
