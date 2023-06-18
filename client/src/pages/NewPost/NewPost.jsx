@@ -52,7 +52,7 @@ const NewPost = () => {
             navigate("/home");
 
         } catch(err){
-            alert("Could not publish");
+            alert("Could not publish ! \n Have you filled in all the fields and chosen the category?");
             console.log(err);
         }
     };

@@ -72,7 +72,7 @@ const Profile = () => {
                         </div>
                     </form>
                     <div className="flex flex-col w-8/12">
-                        <h1 className="py-5 text-3xl text-text font-bold text-center rounded">Your Posts</h1>
+                        <h1 className={`py-5 text-3xl ${theme === "dark" ? "text-white" : "text-text"} font-bold text-center rounded`}>Your Posts</h1>
                         <TimeLinePostProfile/>
                     </div>     
                 </div>
