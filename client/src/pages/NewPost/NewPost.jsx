@@ -81,10 +81,10 @@ const NewPost = () => {
                         <h2 className="text-3xl text-text font-bold text-center">
                             New Post
                         </h2>
-                        <input type="text" placeholder="Title" className={`bg-blue-100 text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`} 
+                        <input type="text" placeholder="Title" className={`text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-sky-950" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`} 
                         onChange={(e) => setTitle(e.target.value)}/>
                         <div>
-                            <select className={`bg-blue-100 px-4 py-2 rounded-full ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}
+                            <select className={`px-4 py-2 rounded-full ${theme === "dark" ? "bg-sky-950" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}
                             onChange={(e) => setCategory(e.target.value)}>
                             {categories && categories.map((category) => {
                                 return (
@@ -94,10 +94,10 @@ const NewPost = () => {
                             }
                         </select>                       
                         </div>
-                        <textarea maxlength={280} title="max 280 characters" placeholder="Write a short description..." className={`bg-blue-100 rounded-lg py-2 px-2 ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`} onChange={handleTextareaChange_short}></textarea>
-                        <p className="text-text">Number of characters : {characterCount}/280</p>
-                    <textarea maxlength={1000} title="max 1000 characters" placeholder="Write the full description..." className={`bg-blue-100 rounded-lg py-2 px-2 ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`} onChange={handleTextareaChange_description}></textarea>
-                        <p className="text-text">Number of characters : {characterCount2}/1000</p>
+                        <textarea maxlength={280} title="max 280 characters" placeholder="Write a short description..." className={`bg-blue-100 rounded-lg py-2 px-2 ${theme === "dark" ? "bg-sky-950" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`} onChange={handleTextareaChange_short}></textarea>
+                        <p className={`${theme === "dark" ? "text-white" : "text-black"}`}>Number of characters : {characterCount}/280</p>
+                    <textarea maxlength={1000} title="max 1000 characters" placeholder="Write the full description..." className={`bg-blue-100 rounded-lg py-2 px-2 ${theme === "dark" ? "bg-sky-950" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`} onChange={handleTextareaChange_description}></textarea>
+                        <p className={`${theme === "dark" ? "text-white" : "text-black"}`}>Number of characters : {characterCount2}/1000</p>
                             <div className="flex justify-center">
                             <button class="bg-button resize-none px-4 py-2 text-white rounded-full hover:bg-button-hover" style={{display: "flex", justifyContent:"center", alignItems:"flex-end", width:"60%"}} onClick={handlePublish}>
                                 Publish
@@ -105,11 +105,6 @@ const NewPost = () => {
                             </div>
                     </form>    
                 </div>
-                    <p>
-                    <span style={{ height:"50px", width: "4rem" }}></span> 
-                    <SocialMedia/>
-                    <span style={{ height:"50px", width: "4rem" }}></span> 
-                    </p>
             </div>
 
         </div>

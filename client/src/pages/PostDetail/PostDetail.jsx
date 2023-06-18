@@ -49,35 +49,35 @@ const PostDetail = () => {
                     <div className="px-6">
                         <Leftbar />
                     </div>
-                    <div className="col-span-3 border-t-slate-800 px-6">
+                    <div className="col-span-3 border-t-slate-800 px-6 mt-8 mb-8">
                         <form className={`bg-gradient-to-b ${gradientColors1} from-form-pink to-form-purple flex flex-col px-8 py-12 rounded-lg w-8/12 mx-0 gap-5${theme}`}>
-                                <h2 className="text-3xl text-text font-bold mb-5 text-center rounded">
+                                <h2 className="text-3xl text-text font-bold mb-5 text-center">
                                     Post Details
                                 </h2> 
-                            <div className="bg-blue-100 text-xl px-4 py-2 mb-5 rounded-full">
+                            <div className={`${theme === "dark" ? "bg-sky-950" : "bg-blue-100"} text-xl px-4 py-2 mb-5 rounded-full`}>
                                 <h1><b>Announce : </b> {state.title}</h1>
                             </div>
-                            <div className="bg-blue-100 text-xl px-4 py-2 mb-5 rounded-full">
+                            <div className={`${theme === "dark" ? "bg-sky-950" : "bg-blue-100"} text-xl px-4 py-2 mb-5 rounded-full`}>
                                 <h1><b>Category : </b> {state.category}</h1>
                             </div>
-                            <div className="bg-blue-100 text-xl px-4 py-2 mb-5 rounded-lg text-justify">
+                            <div className={`${theme === "dark" ? "bg-sky-950" : "bg-blue-100"} text-xl px-4 py-2 mb-5 rounded-lg text-justify`}>
                                 <h1><b>Description : </b> {state.description}</h1>
                             </div>
                         </form>
                         <form className="bg-gradient-to-b from-form-purple to-form-blue flex flex-col px-8 py-12 rounded-lg w-8/12 mx-0 my-5 gap-5">
-                            <h1 className="text-3xl font-bold mb-4">Who am I?</h1>
-                            <div className="bg-blue-100 text-xl px-4 py-2 rounded-lg">
+                            <h2 className="text-3xl text-text font-bold mb-5 text-center">Who am I?</h2>
+                            <div className={`${theme === "dark" ? "bg-sky-950" : "bg-blue-100"} text-xl px-4 py-2 rounded-lg`}>
                                 <h1><b>UserName : </b> {userData.userName}</h1>
                                 <h1><b>First Name : </b> {userData.firstName}</h1>
                                 <h1><b>Last Name : </b> {userData.lastName}</h1>
                             </div>
-                            <div className="bg-blue-100 text-xl px-4 py-2 rounded-full">
+                            <div className={`${theme === "dark" ? "bg-sky-950" : "bg-blue-100"} text-xl px-4 py-2 rounded-full`}>
                                 <h1><b>Email : </b> {userData.email}</h1>
                             </div>
-                            <div className="bg-blue-100 text-xl px-4 py-2 rounded-full">
+                            <div className={`${theme === "dark" ? "bg-sky-950" : "bg-blue-100"} text-xl px-4 py-2 rounded-full`}>
                                 <h1><b>Birth Date : </b> {userData.birthDate}</h1>
                             </div>
-                            <div className="bg-blue-100 text-xl px-4 py-2 rounded-lg text-justify">
+                            <div className={`${theme === "dark" ? "bg-sky-950" : "bg-blue-100"} text-xl px-4 py-2 rounded-lg text-justify`}>
                                 <h1><b>Description : </b> {userData.description}</h1>
                             </div>
                         </form>  

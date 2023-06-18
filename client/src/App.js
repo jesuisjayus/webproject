@@ -81,10 +81,12 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-      const [theme, setTheme]=useState("light")
-        useEffect(() => {
-          document.body.className = theme;
-        }, [theme]);
+    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+  
+    useEffect(() => {
+      localStorage.setItem('theme', theme);
+    }, [theme]);
+        
         const ToggleTheme=()=>{
         
            if (theme==='light')

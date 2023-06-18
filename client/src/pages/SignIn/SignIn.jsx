@@ -74,13 +74,25 @@ const SignIn = () => {
             console.log(err);
         }
     };
+    let logo;
+    if (theme === "light") {
+      logo = "/logo.png";
+    } else {
+      logo = "/logo-dark.png";
+    }
+  let nom;
+    if (theme === "light") {
+      nom = "/nom.png";
+    } else {
+      nom = "/nom-dark.png";
+    }
 
     return (
 
         <div className={`p-4 ${theme}`}>
             <div className="flex flex-col items-center justify-center gap-2">
-                <img src="/logo.png" alt="skillshare" width="150px"/>
-                <img src="/nom.png" alt="skillshare" width="150px"/>
+                <img src={logo} alt="skillshare" width="150px"/>
+                <img src={nom} alt="skillshare" width="150px"/>
             </div>
             <form className={`bg-gradient-to-b ${gradientColors1} from-form-pink to-form-purple flex flex-col px-8 py-12 rounded-lg w-6/12 mx-auto gap-8 my-5 ${theme}` }>
                 <h2 className="text-3xl text-text font-bold text-center">
@@ -90,13 +102,13 @@ const SignIn = () => {
                     onChange={(e) => setUserName(e.target.value)}
                     type="text" 
                     placeholder="Username" 
-                    className={`text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}
+                    className={`text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-sky-950" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}
                     />
                         <input
                     onChange={(e) => setPassword(e.target.value)} 
                     type="password" 
                     placeholder="Password" 
-                    className={`text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}/>
+                    className={`text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-sky-950" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}/>
                 <button className="bg-button text-white text-xl px-4 py-2 rounded-full hover:bg-button-hover" onClick={handleLogin}>Sign In</button>
             </form>
             <form className={`bg-gradient-to-b  ${gradientColors2} from-form-purple to-form-blue flex flex-col px-8 py-12 rounded-lg w-6/12 mx-auto gap-8 my-5 ${theme}`}>
@@ -108,30 +120,30 @@ const SignIn = () => {
                 <input type="text" 
                      onChange={(e) => setFirstname(e.target.value)}
                      placeholder="Firstname" 
-                     className={`text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}
+                     className={`text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-sky-950" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}
                      />
                 <input type="text"
                     onChange={(e) => setLastname(e.target.value)}
                      placeholder="Lastname"
-                     className={`text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}
+                     className={`text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-sky-950" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}
                      />
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                 <input type="text" 
                     onChange={(e) => setUserName(e.target.value)}
                     placeholder="Username" 
-                    className={`text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}
+                    className={`text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-sky-950" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}
                 />
                 <input type="text"
                     onChange={(e) => setEmail(e.target.value)} 
                     placeholder="Email" 
-                    className={`text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}
+                    className={`text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-sky-950" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}
                 />
                 </div>
                 <input type="password"
                     onChange={(e) => setPassword(e.target.value)} 
                     placeholder="Password" 
-                    className={`text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}
+                    className={`text-xl px-4 py-2 rounded-full ${theme === "dark" ? "bg-sky-950" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}
                 />
                 <button className="bg-button text-white text-xl px-4 py-2 rounded-full hover:bg-button-hover" onClick={handleSignUp}>Sign Up</button>
             </form>

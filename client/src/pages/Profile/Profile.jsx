@@ -52,20 +52,20 @@ const Profile = () => {
                             <h2 className="text-3xl text-text font-bold text-center rounded">
                                 Your Profile
                             </h2> 
-                        <div className={`bg-blue-100 text-xl px-4 py-2 rounded-full truncate ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}>
+                        <div className={`text-xl px-4 py-2 rounded-full truncate ${theme === "dark" ? "bg-sky-950" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}>
                             <h1><b>User Name : </b> {currentUser.userName}</h1>
                         </div>
-                        <div className={`bg-blue-100 text-xl px-4 py-2 rounded-lg truncate ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}>
+                        <div className={`text-xl px-4 py-2 rounded-lg truncate ${theme === "dark" ? "bg-sky-950" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}>
                             <h1><b>Last Name : </b> {currentUser.firstName}</h1>
                             <h1><b>First Name : </b> {currentUser.lastName}</h1>
                         </div>
-                        <div className={`bg-blue-100 text-xl px-4 py-2 rounded-full truncate ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}>
+                        <div className={`text-xl px-4 py-2 rounded-full truncate ${theme === "dark" ? "bg-sky-950" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}>
                             <h1><b>Email : </b> {currentUser.email}</h1>
                         </div>
-                        <div className={`bg-blue-100 text-xl px-4 py-2 rounded-full truncate${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}>
+                        <div className={`text-xl px-4 py-2 rounded-full truncate ${theme === "dark" ? "bg-sky-950" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}>
                             <h1><b>Birth Date : </b> {currentUser.birthDate}</h1>
                         </div>
-                        <div className={`bg-blue-100 text-xl px-4 py-2 rounded-lg text-justify truncate ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}>
+                        <div className={`text-xl px-4 py-2 rounded-lg text-justify ${theme === "dark" ? "bg-sky-950" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`}>
                             <h1><b>Description : </b> {currentUser.description}</h1>
                         </div>
                     </form>

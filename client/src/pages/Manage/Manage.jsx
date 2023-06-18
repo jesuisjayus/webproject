@@ -21,7 +21,6 @@ const Manage = () => {
     const [characterCount, setCharacterCount] = useState(0);
     const [userName, setUserName] = useState(currentUser.userName);
     const [birthDate, setBirthDate] = useState(currentUser.birthDate);
-    const [selectedImage, setSelectedImage] = useState('');
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const theme = useContext(ThemeContext);
@@ -43,31 +42,6 @@ const Manage = () => {
             console.log(text);
         }
         
-    };
-
-    const handleImageChange = (event) => {
-      const file = event.target.files[0];
-      const reader = new FileReader();
-      reader.onload = () => {
-        setSelectedImage(reader.result);
-      };
-      if (file) {
-        reader.readAsDataURL(file);
-      }
-    };
-
-    const profilePictureStyle = {
-        width: '150px',
-        height: '150px',
-        borderRadius: '50%',
-        overflow: 'hidden',
-        backgroundColor: 'lightgray',
-      };
-    
-    const imageStyle = {
-        width: '100%',
-        height: '100%',
-        objectFit: 'cover',
     };
 
     const handleBirthDate = (event) => {
@@ -93,7 +67,7 @@ const Manage = () => {
         
             const res = await axios.put(`http://localhost:8000/api/users/${currentUser._id}`, {userName,birthDate,description},{headers});
             dispatch(loginSuccess(res.data));
-            navigate("/profile");
+            navigate(`/profile/${currentUser._id}`);
             console.log(res.data);
         }catch(err){
             alert('Somethong went wrong');
@@ -104,7 +78,7 @@ const Manage = () => {
 
     const handleCancel = (event) => {
         event.preventDefault();
-        navigate("/profile");
+        navigate(`/profile/${currentUser._id}`);
     }
 
     let gradientColors1;
@@ -133,13 +107,9 @@ const Manage = () => {
                                 <h2 className="text-3xl text-text font-bold text-center mb-5">
                                     Manage Profile
                                 </h2>
-                                <div style={profilePictureStyle}>
-                                    <img src={selectedImage} alt="" style={imageStyle} />
-                                </div>
-                                    <input className="mt-3" type="file" accept=".jpeg, .jpg, .png" onChange={handleImageChange}/>
-                                    <input type="text" placeholder="Username" className={`bg-blue-100 rounded-full py-2 px-2 mt-5 mb-5 ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`} onChange={handleUserName}/>
-                                    <input type="text" placeholder="Birth Date (DD/MM/YYYY)" pattern="\d{2}/\d{2}/\d{4}" title="Format DD/MM/YYYY" className={`bg-blue-100 rounded-full py-2 px-2 mb-5 ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`} onChange={handleBirthDate} required/>
-                                    <textarea maxlength={500} title="max 500 characters" placeholder={"Write a little description..." }className={`bg-blue-100 rounded-lg py-2 px-2 mb-2 ${theme === "dark" ? "bg-blue-200" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`} onChange={handleTextareaChange}></textarea>
+                                    <input type="text" placeholder="Username" className={`rounded-full py-2 px-2 mt-5 mb-5 ${theme === "dark" ? "bg-sky-950" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`} onChange={handleUserName}/>
+                                    <input type="text" placeholder="Birth Date (DD/MM/YYYY)" pattern="\d{2}/\d{2}/\d{4}" title="Format DD/MM/YYYY" className={`rounded-full py-2 px-2 mb-5 ${theme === "dark" ? "bg-sky-950" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`} onChange={handleBirthDate} required/>
+                                    <textarea maxlength={500} title="max 500 characters" placeholder={"Write a little description..." }className={`rounded-lg py-2 px-2 mb-2 ${theme === "dark" ? "bg-sky-950" : "bg-blue-100"} ${theme === "dark" ? "text-white" : "text-black"}`} onChange={handleTextareaChange}></textarea>
                                     <p className="mb-5">number of characters : {characterCount}/500</p>
                                     <div className="flex gap-1">
                                             <button className="bg-button resize-none flex items-center justify-center px-4 py-2 mb-5 text-white rounded-full hover:bg-button-hover w-full" onClick={handleValidate}>

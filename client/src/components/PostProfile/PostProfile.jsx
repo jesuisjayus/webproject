@@ -55,7 +55,7 @@ const Post = ({post, setData}) => {
                         Delete
                     </button>
                 </div>
-                <p className="text-1xl text-center bg-blue-100 px-4 rounded-full mr-auto">
+                <p className={`text-1xl text-center ${theme === "dark" ? "bg-sky-950" : "bg-blue-100"} px-4 rounded-full mr-auto`}>
                     {post.category}
                 </p>   
                 <p className="text-2xl text-center text-left">
