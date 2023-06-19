@@ -37,34 +37,28 @@ const AboutUs = () => {
         </div>
             <div className="grid grid-cols-1 md:grid-cols-4">
                 <div className="px-6"><AboutUsLeftbar /></div>
-                    <div className="col-span-2 border-t-slate-1500 px-6">
+                    <div className="col-span-2 px-5">
                         <section style={sectionStyle}>
                             <div style={containerStyle}>
                                 <h2 style={titleStyle}>About Us</h2>
                                     <div style={contentStyle}>
                                         <p style={descriptionStyle}>
-                                            bla bla blabla bla blabla bla blabla bla blabla bla bla
-                                            bla bla blabla bla blabla bla blabla bla blabla bla bla
-                                            bla bla blabla bla blabla bla blabla bla blabla bla bla
-                                            bla bla blabla bla blabla bla blabla bla blabla bla bla
+                                            We are a young team of web developers.
                                         </p>
                                         <p style={descriptionStyle}>
-                                            bla bla blabla bla blabla bla blabla bla blabla bla bla
-                                            bla bla blabla bla blabla bla blabla bla blabla bla bla
-                                            bla bla blabla bla blabla bla blabla bla blabla bla bla
-                                            bla bla blabla bla blabla bla blabla bla blabla bla bla
+                                            People love learning new things, but often they do not 
+                                            have the posibility to do it. 
                                         </p>
                                         <p style={descriptionStyle}>
-                                            bla bla blabla bla blabla bla blabla bla blabla bla bla
-                                            bla bla blabla bla blabla bla blabla bla blabla bla bla
-                                            bla bla blabla bla blabla bla blabla bla blabla bla bla
-                                            bla bla blabla bla blabla bla blabla bla blabla bla bla
+                                            This is the reason which stands 
+                                            behind our website creation.
                                         </p>
                                         <p style={descriptionStyle}>
-                                            bla bla blabla bla blabla bla blabla bla blabla bla bla
-                                            bla bla blabla bla blabla bla blabla bla blabla bla bla
-                                            bla bla blabla bla blabla bla blabla bla blabla bla bla
-                                            bla bla blabla bla blabla bla blabla bla blabla bla bla
+                                            This website is intended to help the persons who have
+                                            the desire to learn more about a particular thing, skill
+                                            or simply something that they are passionate about.
+                                            In exchange for it, they will share their knowledge 
+                                            about a thing that they are good at. 
                                         </p>
                                         <SocialMedia/>
 
